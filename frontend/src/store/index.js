@@ -20,4 +20,8 @@ const configureStore = (preloadedState) => {
     return createStore(rootReducer, preloadedState, enhancer);
 };
 
+export function restoreCSRF() {
+    return csrfFetch('/api/csrf/restore')
+}
+
 export default configureStore;
