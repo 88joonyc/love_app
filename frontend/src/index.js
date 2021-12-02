@@ -14,11 +14,19 @@ if (process.env.NODE_ENV !== 'production') {
   window.store = store;
 }
 
+function Root() {
+  return (
+    <Provider root={root}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  )
+}
+
 ReactDOM.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Provider>,
+  <React.StrictMode>
+    <Root />
+  </React.StrictMode>,
   document.getElementById('root')
 );
