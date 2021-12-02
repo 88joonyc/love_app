@@ -16,3 +16,7 @@ export async function csrfFetch(url, option = {}) {
 
     return res;
 }
+
+export function restoreCSRF() {
+    return csrfFetch('/api/csrf/restore')
+}
