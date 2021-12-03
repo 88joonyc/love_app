@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import * as sessionActions from '../../actions/session'
 
 export default function SignupForm() {
-
-
+    const dispatch = useDispatch()
     const [ info, setInfo ] = useState({})
     const [ errors, setErrors ] = useState([])
 
@@ -13,7 +13,12 @@ export default function SignupForm() {
 
     const handleSubmit = e => {
         e.preventDefault();
-
+        setErrors([])
+        return dispatch(sessionActions.signup(info))
+            .catch(async res => {
+                const data = await res.json()
+                if (data && data.errors) setErrors(data.errors);
+            })
     };
 
     const form = (
