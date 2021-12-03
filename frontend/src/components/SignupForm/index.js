@@ -9,6 +9,7 @@ export default function SignupForm() {
 
     const handleInput = e => {
         setInfo({...info, [e.target.name]: e.target.value})
+        console.log(info)
     };
 
     const handleSubmit = e => {
@@ -26,14 +27,14 @@ export default function SignupForm() {
             <input
                 type='text'
                 name="email"
-                placeholder='Nickname'
-                value
+                placeholder='Email Address'
+                onChange={handleInput}
             />
             <input
                 type='text'
                 name="password"
                 placeholder='Password'
-                value={}
+                onChange={handleInput}
             />
             <button type='submit'>Sign up</button>
         </form>
@@ -42,7 +43,7 @@ export default function SignupForm() {
 
     return (
         <>
-
+            {form}
         </>
     )
 
