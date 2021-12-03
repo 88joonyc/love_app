@@ -43,8 +43,8 @@ router.get('/',
 router.post('/',
     validateSignup,
     asyncHandler(async (req, res) => {
-        const { email, password, nickname } = req.body;
-        const user = await User.signup({ email, nickname, password });
+        const { email, password } = req.body;
+        const user = await User.signup({ email, password });
 
         await setTokenCookie(res, user);
 
