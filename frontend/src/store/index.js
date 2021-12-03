@@ -1,4 +1,4 @@
-import { combineReducers, createStore, applyMiddleware, compose } from 'react';
+import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { sessionReducer } from './session';
 
