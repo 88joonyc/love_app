@@ -1,4 +1,5 @@
-import { csrfFetch } from "./csrf";
+import { csrfFetch } from "../store/csrf";
+import { SET_USER, REMOVE_USER } from '../store/session'
 
 const setUser = (user) => {
     return {

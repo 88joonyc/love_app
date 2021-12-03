@@ -1,6 +1,6 @@
 // this is where the reducer belongs
-const SET_USER = 'session/setUser';
-const REMOVE_USER = 'session/removeUser';
+export const SET_USER = 'session/setUser';
+export const REMOVE_USER = 'session/removeUser';
 
 const initialState = { user: {} }
 
