@@ -13,14 +13,14 @@ const validateSignup = [
         .exists({ checkFalsy: true })
         .isEmail()
         .withMessage('Please provide a valid email.'),
-    check('nickname')
-        .exists({ checkFalsy: true })
-        .isLength({ min: 4 })
-        .withMessage('Please provide a nickname with at least 4 characters.'),
-    check('nickname')
-        .not()
-        .isEmail()
-        .withMessage('Nickname cannot be an email.'),
+    // check('nickname')
+    //     .exists({ checkFalsy: true })
+    //     .isLength({ min: 4 })
+    //     .withMessage('Please provide a nickname with at least 4 characters.'),
+    // check('nickname')
+    //     .not()
+    //     .isEmail()
+    //     .withMessage('Nickname cannot be an email.'),
     check('password')
         .exists({ checkFalsy: true })
         .isLength({ min: 6 })
