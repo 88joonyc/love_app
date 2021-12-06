@@ -2,7 +2,7 @@
 export const SET_USER = 'session/setUser';
 export const REMOVE_USER = 'session/removeUser';
 
-const initialState = { user: {} }
+const initialState = { user: null }
 
 export const sessionReducer = (state = initialState, action) => {
     let newState;
