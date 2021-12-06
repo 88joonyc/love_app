@@ -94,5 +94,9 @@ module.exports = (sequelize, DataTypes) => {
     return await User.scope('currentUser').findByPk(user.id)
   }
 
+  User.logout = function() {
+
+  }
+
   return User;
 };
