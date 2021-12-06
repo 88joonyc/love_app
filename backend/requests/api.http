@@ -1,13 +1,17 @@
-## GET
-
-GET http:127.0.0.1:5252/api/users
+### GET
+GET http://127.0.0.1:5252/api/users
 Content-Type: application/json
 
 
-## Submit User
-
-POST http://127.0.0.1/api/session
+### Post new user
+POST http://127.0.0.1:5252/api/session
 Content-Type: application/json
+
 {
-
+    "credential": "lovey@dove.com",
+    "password": "password"
 }
+
+
+### delete
+DELETE http://127.0.0.1/api/session

@@ -2,7 +2,7 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 
-const { setTokenCookie, resotreUser } = require('../../utils/auth');
+const { setTokenCookie, restoreUser } = require('../../utils/auth');
 const { handleValidationErrors } = require('../../utils/validation');
 const { User } = require('../../db/models');
 
@@ -23,9 +23,8 @@ router.post('/',
     validateLogin,
     asyncHandler(async (req, res, next) => {
         const { credential, password } = req.body;
-
         const user = await User.login({ credential, password });
-
+        console.log('========================================', credential, password)
         if (!user) {
             const err = new Error('Login failed');
             err.status = 401;
