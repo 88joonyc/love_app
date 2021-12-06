@@ -11,7 +11,6 @@ module.exports = {
       },
       nickname: {
         type: Sequelize.STRING,
-        allowNull: false,
       },
       fullName: {
         type: Sequelize.STRING,

@@ -1,0 +1,13 @@
+## GET
+
+GET http:127.0.0.1:5252/api/users
+Content-Type: application/json
+
+
+## Submit User
+
+POST http://127.0.0.1/api/session
+Content-Type: application/json
+{
+
+}
