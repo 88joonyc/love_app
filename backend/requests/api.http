@@ -4,11 +4,11 @@ Content-Type: application/json
 
 
 ### Post new user
-POST http://127.0.0.1:5252/api/session
+POST http://127.0.0.1:5252/api/users
 Content-Type: application/json
 
 {
-    "credential": "lovey@dove.com",
+    "email": "demo@cove.com",
     "password": "password"
 }
 

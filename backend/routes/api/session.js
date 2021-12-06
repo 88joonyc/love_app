@@ -19,12 +19,12 @@ const validateLogin = [
     handleValidationErrors,
 ];
 
+// login route
 router.post('/',
     validateLogin,
     asyncHandler(async (req, res, next) => {
         const { credential, password } = req.body;
         const user = await User.login({ credential, password });
-        console.log('========================================', credential, password)
         if (!user) {
             const err = new Error('Login failed');
             err.status = 401;
@@ -41,6 +41,7 @@ router.post('/',
     }),
 );
 
+// logout route
 router.delete('/',
     (_req, res) => {
         res.clearCookie('token');

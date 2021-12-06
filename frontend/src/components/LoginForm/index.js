@@ -12,9 +12,9 @@ export default function LoginForm() {
     const  [ password, setPassword ] = useState('')
     const  [ errors, setErrors ] = useState([])
 
-    // if (sessionUser) return (
-    //     <Navigate replace to='/' />
-    // );
+    if (sessionUser) return (
+        <Navigate replace to='/' />
+    );
 
     const handleSubmit = e =>  {
         e.preventDefault();
