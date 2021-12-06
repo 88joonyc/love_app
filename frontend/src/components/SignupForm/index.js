@@ -9,7 +9,6 @@ export default function SignupForm() {
 
     const handleInput = e => {
         setInfo({...info, [e.target.name]: e.target.value})
-        console.log(info)
     };
 
     const handleSubmit = e => {
