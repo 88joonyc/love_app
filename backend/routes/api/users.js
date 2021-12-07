@@ -13,14 +13,19 @@ const validateSignup = [
         .exists({ checkFalsy: true })
         .isEmail()
         .withMessage('Please provide a valid email.'),
-    // check('nickname')
-    //     .exists({ checkFalsy: true })
-    //     .isLength({ min: 4 })
-    //     .withMessage('Please provide a nickname with at least 4 characters.'),
-    // check('nickname')
-    //     .not()
-    //     .isEmail()
-    //     .withMessage('Nickname cannot be an email.'),
+        // .custom((value, {req}) => {
+        //     return new Promise((res, rej) => {
+        //         User.findOne( {where: {email: req.body.email}, function(err, user){
+        //             if (err) {
+        //                 reject(new Error('server err'))
+        //             }
+        //             if (Boolean(user)) {
+        //                 reject(new Error("email is already in use"))
+        //             }
+        //             resolve(true)
+        //         }})
+        //     })
+        // }),
     check('password')
         .exists({ checkFalsy: true })
         .isLength({ min: 6 })
@@ -45,9 +50,7 @@ router.post('/',
     validateSignup,
     asyncHandler(async (req, res) => {
         const { email, password } = req.body;
-        // console.log(email, password)
         const user = await User.signup({ email, password });
-        // console.log(user)
         await setTokenCookie(res, user);
 
         return res.json({
