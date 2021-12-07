@@ -13,8 +13,8 @@ const validateSignup = [
         .exists({ checkFalsy: true })
         .isEmail()
         .withMessage('Please provide a valid email.')
-        .custom(async (themail)  => {
-            const exists = await User.findOne({where: { email: themail }})
+        .custom(async (e)  => {
+            const exists = await User.findOne({where: { email: e }})
             if (exists) {
                 throw new Error("This email address is already in use")
             }
@@ -22,7 +22,7 @@ const validateSignup = [
     check('password')
         .exists({ checkFalsy: true })
         .isLength({ min: 6 })
-        .withMessage('Password must be at least 6 characters long'),
+        .withMessage('Password must be at least 6 characters long.'),
     handleValidationErrors,
 ]
 
