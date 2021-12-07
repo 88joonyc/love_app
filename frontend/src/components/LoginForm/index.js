@@ -38,12 +38,14 @@ export default function LoginForm() {
                 value={credential}
                 onChange={e => setCredential(e.target.value)}
                 required
+                placeholder='Email Address'
             />
             <input
                 type='text'
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 required
+                placeholder='Password'
             />
             <button type='submit'>Login</button>
         </form>
