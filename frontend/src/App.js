@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
+import Navigation from "./components/Navigation";
 import * as sessionActions from './actions/session'
 
 function App() {
@@ -17,10 +18,15 @@ function App() {
   }, [dispatch])
 
   return (
-      <Routes>
-        <Route path='/login' element={<LoginForm />} />
-        <Route path='/signup' element={<SignupForm />} />
-      </Routes>
+    <>
+      <Navigation isLoaded={isLoaded} />
+      {isLoaded && (
+        <Routes>
+          <Route path='/login' element={<LoginForm />} />
+          <Route path='/signup' element={<SignupForm />} />
+        </Routes>
+      )}
+    </>
   );
 }
 
