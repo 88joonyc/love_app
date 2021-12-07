@@ -12,20 +12,13 @@ const validateSignup = [
     check('email')
         .exists({ checkFalsy: true })
         .isEmail()
-        .withMessage('Please provide a valid email.'),
-        // .custom((value, {req}) => {
-        //     return new Promise((res, rej) => {
-        //         User.findOne( {where: {email: req.body.email}, function(err, user){
-        //             if (err) {
-        //                 reject(new Error('server err'))
-        //             }
-        //             if (Boolean(user)) {
-        //                 reject(new Error("email is already in use"))
-        //             }
-        //             resolve(true)
-        //         }})
-        //     })
-        // }),
+        .withMessage('Please provide a valid email.')
+        .custom(async (themail)  => {
+            const exists = await User.findOne({where: { email: themail }})
+            if (exists) {
+                throw new Error("This email address is already in use")
+            }
+        }),
     check('password')
         .exists({ checkFalsy: true })
         .isLength({ min: 6 })
