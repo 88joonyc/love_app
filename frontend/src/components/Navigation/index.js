@@ -28,7 +28,7 @@ const Navigation = ({isLoaded}) => {
             <ul>
                 <li>
                     <NavLink exact to='/'>Home</NavLink>
-                    {isLoaded && naviLinks}
+                    {!isLoaded && naviLinks}
                 </li>
             </ul>
         </>

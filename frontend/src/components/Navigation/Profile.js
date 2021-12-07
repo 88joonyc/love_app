@@ -16,7 +16,6 @@ const Profile = ({ user }) => {
         if (!showMenu) return
 
         const close = () => {
-            if (!showMenu) return
             setShowMenu(false)
         }
 
