@@ -62,6 +62,7 @@ export default function LoginForm() {
                         className='login-button'
                     >Log In</button>
                 </form>
+                <div className='or-break'> ━━━━━━━━━━━ or ━━━━━━━━━━━ </div>
                 <div className='signup-link-container'>
                     <NavLink className='signup-link' to='/signup'>sign up</NavLink>
                 </div>

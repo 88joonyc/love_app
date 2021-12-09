@@ -11,8 +11,8 @@
 }
 
 .login-wrapper {
-    background-color: rgb(240, 240, 240);
-    height: 500px;
+    background-color: rgb(244, 242, 242);
+    height: 600px;
     padding-top: 40px;
 }
 
@@ -21,7 +21,7 @@
     padding-top: 20px;
     background-color: white;
     width: 400px;
-    height: 325px;
+    height: 385px;
     border-radius: 5px;
     box-shadow: 1px 1px 5px rgb(154, 150, 150);
     padding-bottom: 20px;
@@ -38,6 +38,7 @@
     border-radius: 5px;
     font-size: 100%;
     border: 1px solid rgb(220, 219, 219);
+    font-family: 'Encode Sans', sans-serif;
 }
 
 .login-button {
@@ -46,19 +47,30 @@
     margin: 20px 15px 0px 15px;
     height: 50px;
     cursor: pointer;
-    font-size: medium;
+    font-size: large;
     border: 1px solid rgb(219, 219, 220);
+    font-family: 'Encode Sans', sans-serif;
+    color: rgb(16, 82, 82);
+    font-weight: bolder;
 }
 
 .signup-link {
     margin: 0 auto;
+    margin-top: 20px;
     font-size: 20px;
     text-decoration: none;
-    color: rgb(27, 27, 169);
+    color: white;
+    width: 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 25px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid rgb(223, 223, 223);
+    background-color: rgb(110, 183, 228);
 }
 
 .signup-link-container {
-    margin-top: 10px;
     display: flex;
     flex-direction: column;
 }
@@ -69,5 +81,16 @@
 
 .loginto-msg {
     text-align: center;
-    padding: 20px
+    padding: 20px;
+    font-family: 'Encode Sans', sans-serif;
+    font-size: larger;
+    font-weight: bolder;
+    color: rgb(249, 128, 152);
+}
+
+.or-break {
+    margin-top: 20px;
+    font-size: medium;
+    color: rgb(198, 198, 199);
+    text-align: center;
 }
