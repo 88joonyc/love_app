@@ -16,6 +16,24 @@
     padding-top: 40px;
 }
 
+@media screen and (max-width: 600px) {
+    div.login-form-container {
+        width: 90%;
+        height: 60%;
+    }
+    div.or-break {
+        display: hidden;
+    }
+    img.luvApp-logo {
+        width: 20%;
+        height: 40%;
+    }
+    div.or-break {
+        visibility: hidden;
+        margin: -10px;
+    }
+}
+
 .login-form-container {
     margin: 0 auto;
     padding-top: 20px;
