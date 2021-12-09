@@ -12,8 +12,13 @@ module.exports = {
       nickname: {
         type: Sequelize.STRING,
       },
-      fullName: {
+      firstName: {
         type: Sequelize.STRING,
+        allowNull: false,
+      },
+      lastName: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       email: {
         type: Sequelize.STRING,
@@ -23,8 +28,12 @@ module.exports = {
       image: {
         type: Sequelize.STRING,
       },
+      phoneNumber: {
+        type: Sequelize.INTEGER,
+      },
       birthday: {
         type: Sequelize.DATE,
+        allowNull: false
       },
       hashedPassword: {
         type: Sequelize.STRING,
