@@ -14,6 +14,7 @@ module.exports = {
       image: 'https://f4.bcbits.com/img/a1074826773_10.jpg',
       phoneNumber: faker.phone.phoneNumberFormat(),
       birthday: faker.date.past(),
+      gender: "male",
       hashedPassword: bcrypt.hashSync('password'),
     },
     {
@@ -24,6 +25,7 @@ module.exports = {
       image: 'https://f4.bcbits.com/img/a1074826773_10.jpg',
       phoneNumber: faker.phone.phoneNumberFormat(),
       birthday: faker.date.past(),
+      gender: "female",
       hashedPassword: bcrypt.hashSync('password'),
     },
     {
@@ -34,6 +36,7 @@ module.exports = {
       image: faker.image.imageUrl(),
       phoneNumber: faker.phone.phoneNumberFormat(),
       birthday: faker.date.past(),
+      gender: faker.name.gender(),
       hashedPassword: bcrypt.hashSync('password'),
     },
     {
@@ -44,6 +47,7 @@ module.exports = {
       image: faker.image.imageUrl(),
       phoneNumber: faker.phone.phoneNumberFormat(),
       birthday: faker.date.past(),
+      gender: faker.name.gender(),
       hashedPassword: bcrypt.hashSync('password'),
     },
    ], {});

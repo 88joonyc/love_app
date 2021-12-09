@@ -35,6 +35,9 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false
       },
+      gender: {
+        type: Sequelize.STRING,
+      },
       hashedPassword: {
         type: Sequelize.STRING,
         allowNull: false,

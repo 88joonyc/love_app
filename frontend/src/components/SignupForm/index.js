@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+
 import * as sessionActions from '../../actions/session'
+
+import './SignupForm.css'
 
 export default function SignupForm() {
     const dispatch = useDispatch()
