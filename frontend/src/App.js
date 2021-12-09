@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
+      {/* <Navigation isLoaded={isLoaded} /> */}
       {!isLoaded && (
         <Routes>
           <Route path='/login' element={<LoginForm />} />

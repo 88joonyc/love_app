@@ -1,7 +1,19 @@
+.luvApp-logo {
+    content: url(./heart1.png);
+    width: 5%;
+    height: 10%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.logo-container {
+    display: flex;
+}
+
 .login-wrapper {
     background-color: rgb(240, 240, 240);
     height: 500px;
-    padding-top: 50px;
+    padding-top: 40px;
 }
 
 .login-form-container {
