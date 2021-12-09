@@ -60,7 +60,7 @@ export default function LoginForm() {
                     <button
                         type='submit'
                         className='login-button'
-                    >Login</button>
+                    >Log In</button>
                 </form>
                 <div className='signup-link-container'>
                     <NavLink className='signup-link' to='/signup'>sign up</NavLink>
