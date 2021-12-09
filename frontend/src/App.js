@@ -2,11 +2,12 @@ import React, {useEffect, useState} from "react";
 import { useDispatch } from "react-redux";
 import { Route, Routes } from 'react-router-dom';
 
+import * as sessionActions from './actions/session'
 
 import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
 import Navigation from "./components/Navigation";
-import * as sessionActions from './actions/session'
+import Footer from "./components/Footer";
 
 function App() {
   const dispatch = useDispatch()
@@ -26,6 +27,7 @@ function App() {
           <Route path='/signup' element={<SignupForm />} />
         </Routes>
       )}
+      <Footer />
     </>
   );
 }
