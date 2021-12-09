@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { Navigate, NavLink } from 'react-router-dom';
 
 import * as sessionActions from '../../actions/session';
+
+import './LoginForm.css'
 
 export default function LoginForm() {
     const dispatch = useDispatch()
@@ -27,28 +29,40 @@ export default function LoginForm() {
     }
 
     const form = (
-        <form onSubmit={handleSubmit} >
-            <ul>
-                {errors.map((error, idx) =>
-                    <li key={idx}>{error}</li>
-                )}
-            </ul>
-            <input
-                type='text'
-                value={credential}
-                onChange={e => setCredential(e.target.value)}
-                required
-                placeholder='Email Address'
-            />
-            <input
-                type='text'
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-                required
-                placeholder='Password'
-            />
-            <button type='submit'>Login</button>
-        </form>
+        <div className='login-wrapper'>
+            <div className='login-form-container'>
+                <form className='login-form' onSubmit={handleSubmit} >
+                    <input
+                        type='email'
+                        value={credential}
+                        onChange={e => setCredential(e.target.value)}
+                        required
+                        placeholder='Email Address'
+                        className='login-input'
+                        />
+                    <ul>
+                        {errors.map((error, idx) =>
+                            <div className='login-error' key={idx}>{error}</div>
+                            )}
+                    </ul>
+                    <input
+                        type='password'
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                        required
+                        placeholder='Password'
+                        className='login-input'
+                        />
+                    <button
+                        type='submit'
+                        className='login-button'
+                    >Login</button>
+                </form>
+                <div className='signup-link-container'>
+                    <NavLink className='signup-link' to='/signup'>sign up</NavLink>
+                </div>
+            </div>
+        </div>
     );
 
     return (
