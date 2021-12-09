@@ -66,9 +66,9 @@
     height: 50px;
     cursor: pointer;
     font-size: large;
-    border: 1px solid rgb(219, 219, 220);
+    border: none;
     font-family: 'Encode Sans', sans-serif;
-    color: rgb(16, 82, 82);
+    color: rgb(40, 104, 87);
     font-weight: bolder;
 }
 
@@ -84,7 +84,7 @@
     height: 25px;
     border-radius: 5px;
     text-align: center;
-    border: 1px solid rgb(223, 223, 223);
+    border: none;
     background-color: rgb(110, 183, 228);
 }
 
