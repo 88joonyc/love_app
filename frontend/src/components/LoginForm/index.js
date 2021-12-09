@@ -31,7 +31,7 @@ export default function LoginForm() {
     const form = (
         <div className='login-wrapper'>
             <div className='login-form-container'>
-                <div className='loginto-msg'>Log into Love App</div>
+                <div className='loginto-msg'>Log into LuvApp</div>
                 <form className='login-form' onSubmit={handleSubmit} >
                     <input
                         type='email'

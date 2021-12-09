@@ -7,7 +7,7 @@ const Footer = () => {
 
     let footer;
     if (sessUser) {
-        const footer = (
+        footer = (
             <>
                 <div>
                     <div>hi</div>
@@ -19,7 +19,7 @@ const Footer = () => {
             </>
         )
     } else {
-        const footer = (
+        footer = (
             <>
                 <div>
                     <div>no</div>
