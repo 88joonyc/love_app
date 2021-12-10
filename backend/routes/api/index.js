@@ -3,7 +3,7 @@ const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
 const connectionRouter = require('./connection.js')
 
-//=========================== domain routes ====================================================
+//=========================== domain routes =============================================
 
 router.use('/session', sessionRouter);
 

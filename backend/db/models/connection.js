@@ -20,11 +20,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
 
-    scopes: {
-      currentConnection: {
-        attributes: { exclude: ['hashedValidator'] }
-      }
-    }
+    // scopes: {
+    //   currentConnection: {
+    //     attributes: { exclude: ['validator'] }
+    //   }
+    // }
 
   });
 
