@@ -60,96 +60,106 @@ export default function SignupForm() {
             <div className='logo-container'>
                 <img className='luvApp-logo' />
             </div>
-            <form className="signup-form" onSubmit={handleSubmit} >
-                <ul>
-                    {errors.map((e, i) => (
-                        <div key={`${e-i}`}>{e}</div>
-                    ))}
-                </ul>
-                <div> Create a new account</div>
-                <div> and connect with your special someone.</div>
-                <input
-                    type='text'
-                    name="firstName"
-                    placeholder='First name'
-                    onChange={handleInput}
-                />
-                <input
-                    type='text'
-                    name="lastName"
-                    placeholder='Last name'
-                    onChange={handleInput}
-                />
-                <br />
-                <input
-                    type='text'
-                    name="email"
-                    placeholder='Email address'
-                    onChange={handleInput}
-                />
-                <div className="input-label">Birthday</div>
-                <div className="birthday-box">
-                    <select onChange={handleBday} name='month'>
-                        <option value={1}>Jan</option>
-                        <option value={2}>Feb</option>
-                        <option value={3}>Mar</option>
-                        <option value={4}>Apr</option>
-                        <option value={5}>May</option>
-                        <option value={6}>Jun</option>
-                        <option value={'07'}>Jul</option>
-                        <option value={'08'}>Aug</option>
-                        <option value={'09'}>Sep</option>
-                        <option value={'Oct'}>Oct</option>
-                        <option value={'Nov'}>Nov</option>
-                        <option value={'Dec'}>Dec</option>
-                    </select>
-                    <select onChange={handleBday} name='day'>
-                        {dayRange().map(el => (
-                            <option value={el} key={`day-${el}`}>{el}</option>
-                        ))}
-                    </select>
-                    <select onChange={handleBday} name='year'>
-                        {yearRange().reverse().map(el => (
-                            <option value={el} key={`day-${el}`}>{el}</option>
-                        ))}
-                    </select>
-                </div>
-                <div className="input-label">Gender</div>
-                <div className="gender-box">
-                    <span className="gender" onChange={handleInput, () => setCustom(false)}>
-                        <label for='male'>Female</label>
-                        <input type='radio' value='female' name='gender'/>
-                    </span>
-                    <span className="gender" onChange={handleInput, () => setCustom(false)}>
-                        <label for='male'>Male</label>
-                        <input type='radio' value='male' name='gender'/>
-                    </span>
-                    <span className="gender" onChange={() => setCustom(true)}>
-                        <label for='male'>Custom</label>
-                        <input type='radio' value='custom' name='gender'/>
-                    </span>
-                </div>
-                {custom && <input
-                    type='text'
-                    name="gender"
-                    placeholder='Gender (optional)'
-                    onChange={handleInput}
+            <div className="signup-form-container">
+
+                <form className="signup-form" onSubmit={handleSubmit} >
+                    <ul>
+                        {errors.map((e, i) => (
+                            <div key={`${e-i}`}>{e}</div>
+                            ))}
+                    </ul>
+                    <div> Create a new account</div>
+                    <div> and connect with your special someone.</div>
+                    <input
+                        type='text'
+                        name="firstName"
+                        placeholder='First name'
+                        onChange={handleInput}
+                        className="signup-input signup-name"
+                    />
+                    <input
+                        type='text'
+                        name="lastName"
+                        placeholder='Last name'
+                        onChange={handleInput}
+                        className="signup-input signup-name"
+                    />
+                    <br />
+                    <input
+                        type='text'
+                        name="email"
+                        placeholder='Email address'
+                        onChange={handleInput}
+                        className="signup-input signup-email"
+                    />
+                    <div className="input-label">Birthday</div>
+                    <div className="birthday-box" className=''>
+                        <select className='signup-select' onChange={handleBday} name='month'>
+                            <option value={1}>Jan</option>
+                            <option value={2}>Feb</option>
+                            <option value={3}>Mar</option>
+                            <option value={4}>Apr</option>
+                            <option value={5}>May</option>
+                            <option value={6}>Jun</option>
+                            <option value={'07'}>Jul</option>
+                            <option value={'08'}>Aug</option>
+                            <option value={'09'}>Sep</option>
+                            <option value={'Oct'}>Oct</option>
+                            <option value={'Nov'}>Nov</option>
+                            <option value={'Dec'}>Dec</option>
+                        </select>
+                        <select className='signup-select' onChange={handleBday} name='day'>
+                            {dayRange().map(el => (
+                                <option value={el} key={`day-${el}`}>{el}</option>
+                                ))}
+                        </select>
+                        <select className='signup-select' onChange={handleBday} name='year'>
+                            {yearRange().reverse().map(el => (
+                                <option value={el} key={`day-${el}`}>{el}</option>
+                                ))}
+                        </select>
+                    </div>
+                    <div className="input-label">Gender</div>
+                    <div className="gender-box">
+                        <span className="gender" onChange={handleInput, () => setCustom(false)}>
+                            <label for='male'>Female</label>
+                            <input type='radio' value='female' name='gender'/>
+                        </span>
+                        <span className="gender" onChange={handleInput, () => setCustom(false)}>
+                            <label for='male'>Male</label>
+                            <input type='radio' value='male' name='gender'/>
+                        </span>
+                        <span className="gender" onChange={() => setCustom(true)}>
+                            <label for='male'>Custom</label>
+                            <input type='radio' value='custom' name='gender'/>
+                        </span>
+                    </div>
+                    {custom && <input
+                        type='text'
+                        name="gender"
+                        placeholder='Gender (optional)'
+                        onChange={handleInput}
+                        className="signup-input signup-gender-input"
                     />}
-                <br />
-                <input
-                    type='text'
-                    name="password"
-                    placeholder='Password'
-                    onChange={handleInput}
-                />
-                <input
-                    type='text'
-                    name="checkPass"
-                    placeholder='Confirm password'
-                    onChange={handleInput}
-                />
-                <button type='submit'>Sign up</button>
-            </form>
+                    <br />
+                    <input
+                        type='password'
+                        name="password"
+                        placeholder='Password'
+                        onChange={handleInput}
+                        className="signup-input"
+                    />
+                    <input
+                        type='password'
+                        name="checkPass"
+                        placeholder='Confirm password'
+                        onChange={handleInput}
+                        className="signup-input"
+                    />
+                    <br />
+                    <button className="signup-button" type='submit'>Sign up</button>
+                </form>
+            </div>
         </div>
     )
 
