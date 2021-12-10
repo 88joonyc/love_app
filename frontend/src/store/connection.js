@@ -1,5 +1,5 @@
-const MAKE_CONNECTION = 'connection/makeConnection';
-const REMOVE_CONNECTION = 'connection/removeConnection';
+export const MAKE_CONNECTION = 'connection/makeConnection';
+export const REMOVE_CONNECTION = 'connection/removeConnection';
 
 const initialState = {
     connection: null
