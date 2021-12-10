@@ -4,10 +4,10 @@
 }
 
 .signup-form-container {
-    width: 300px;
+    width: 400px;
     margin: 0 auto;
     border-radius: 5px;
-    padding: 30px;
+    padding: 20px;
     box-shadow: 2px 2px 5px black;
     background-color: white;
 }
@@ -23,9 +23,12 @@
     width: 48%;
 }
 
+.name-container {
+    display: flex;
+}
+
 .signup-name {
-    width: 47%;
-    margin-left: 3px;
+    width: 100%
 }
 
 .signup-email {
@@ -65,4 +68,10 @@
     color: white;
     font-size: large;
     font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .signup-form-container {
+        width: 300px;
+    }
 }

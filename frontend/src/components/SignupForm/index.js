@@ -70,21 +70,22 @@ export default function SignupForm() {
                     </ul>
                     <div> Create a new account</div>
                     <div className="signup-msg"> and connect with your special someone.</div>
-                    <input
-                        type='text'
-                        name="firstName"
-                        placeholder='First name'
-                        onChange={handleInput}
-                        className="signup-input signup-name"
-                    />
-                    <input
-                        type='text'
-                        name="lastName"
-                        placeholder='Last name'
-                        onChange={handleInput}
-                        className="signup-input signup-name"
-                    />
-                    <br />
+                    <div className="name-container">
+                        <input
+                            type='text'
+                            name="firstName"
+                            placeholder='First name'
+                            onChange={handleInput}
+                            className="signup-input signup-name"
+                        />
+                        <input
+                            type='text'
+                            name="lastName"
+                            placeholder='Last name'
+                            onChange={handleInput}
+                            className="signup-input signup-name"
+                        />
+                    </div>
                     <input
                         type='text'
                         name="email"
