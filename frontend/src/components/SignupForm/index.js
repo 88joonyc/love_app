@@ -25,7 +25,7 @@ export default function SignupForm() {
         e.preventDefault();
         setErrors([])
 
-        const bdayd = `${bday.month} ${bday.day} ${bday.year}`
+        const bdayd = `${bday.year}-${bday.month}-${bday.day}`
         setInfo({...info, 'birthday': bdayd})
 
         if (info.password === info.checkPass && bday.month && bday.day && bday.year) {
@@ -92,12 +92,12 @@ export default function SignupForm() {
                         <option value={4}>Apr</option>
                         <option value={5}>May</option>
                         <option value={6}>Jun</option>
-                        <option value={7}>Jul</option>
-                        <option value={8}>Aug</option>
-                        <option value={9}>Sep</option>
-                        <option value={10}>Oct</option>
-                        <option value={11}>Nov</option>
-                        <option value={12}>Dec</option>
+                        <option value={'07'}>Jul</option>
+                        <option value={'08'}>Aug</option>
+                        <option value={'09'}>Sep</option>
+                        <option value={'Oct'}>Oct</option>
+                        <option value={'Nov'}>Nov</option>
+                        <option value={'Dec'}>Dec</option>
                     </select>
                     <select onChange={handleBday} name='day'>
                         {dayRange().map(el => (
