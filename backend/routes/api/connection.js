@@ -22,11 +22,11 @@ router.post('/',
     })
 )
 
-router.put('/:validator',
+router.put('/:id',
     async (req, res) => {
         const connection = await Connection.update(req.body, {
             where: {
-                validator: req.params.validator
+                id: req.params.id
             }
         })
         return res.json(connection)
