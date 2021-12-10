@@ -56,11 +56,14 @@ export default function SignupForm() {
     }
 
     const form = (
-        <>
-            <form onSubmit={handleSubmit} >
+        <div className="login-wrapper">
+            <div className='logo-container'>
+                <img className='luvApp-logo' />
+            </div>
+            <form className="signup-form" onSubmit={handleSubmit} >
                 <ul>
                     {errors.map((e, i) => (
-                        <li key={`${e-i}`}>{e}</li>
+                        <div key={`${e-i}`}>{e}</div>
                     ))}
                 </ul>
                 <div> Create a new account</div>
@@ -77,6 +80,7 @@ export default function SignupForm() {
                     placeholder='Last name'
                     onChange={handleInput}
                 />
+                <br />
                 <input
                     type='text'
                     name="email"
@@ -112,15 +116,15 @@ export default function SignupForm() {
                 </div>
                 <div className="input-label">Gender</div>
                 <div className="gender-box">
-                    <span className="gender" onChange={handleInput}>
+                    <span className="gender" onChange={handleInput, () => setCustom(false)}>
                         <label for='male'>Female</label>
                         <input type='radio' value='female' name='gender'/>
                     </span>
-                    <span className="gender" onChange={handleInput}>
+                    <span className="gender" onChange={handleInput, () => setCustom(false)}>
                         <label for='male'>Male</label>
                         <input type='radio' value='male' name='gender'/>
                     </span>
-                    <span className="gender" onChange={handleInput}>
+                    <span className="gender" onChange={() => setCustom(true)}>
                         <label for='male'>Custom</label>
                         <input type='radio' value='custom' name='gender'/>
                     </span>
@@ -128,9 +132,10 @@ export default function SignupForm() {
                 {custom && <input
                     type='text'
                     name="gender"
-                    placeholder='Gender'
+                    placeholder='Gender (optional)'
                     onChange={handleInput}
-                />}
+                    />}
+                <br />
                 <input
                     type='text'
                     name="password"
@@ -145,7 +150,7 @@ export default function SignupForm() {
                 />
                 <button type='submit'>Sign up</button>
             </form>
-        </>
+        </div>
     )
 
 
