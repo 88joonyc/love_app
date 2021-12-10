@@ -71,6 +71,20 @@
     font-weight: bolder;
 }
 
+.login-button:hover {
+    background-color: rgb(68, 232, 207);
+}
+
+.demo-login {
+    background-color: rgb(249, 128, 152);
+    color: white;
+}
+
+.demo-login:hover {
+    background-color: rgb(255, 90, 123);
+    color: white;
+}
+
 .signup-link {
     margin: 0 auto;
     margin-top: 20px;
@@ -83,6 +97,10 @@
     text-align: center;
     border: none;
     background-color: rgb(110, 183, 228);
+}
+
+.signup-link:hover {
+    background-color: rgb(53, 162, 230);
 }
 
 .signup-link-container {

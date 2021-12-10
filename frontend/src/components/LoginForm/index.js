@@ -68,7 +68,7 @@ export default function LoginForm() {
                     >Log In</button>
                     <button
                         type='button'
-                        className='login-button'
+                        className='login-button demo-login'
                         onClick={demoLogin}
                     >Demo User</button>
                 </form>
