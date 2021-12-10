@@ -15,12 +15,6 @@ export default function SignupForm() {
 
     const handleBday = e => {
         setBday({...bday, [e.target.name]: e.target.value})
-        console.log('==========================================',e.target.name, e.target.value)
-    }
-
-    const handleSex = e => {
-        toggleSex(e.target.value)
-        console.log(sex)
     }
 
     const handleInput = e => {
@@ -30,7 +24,11 @@ export default function SignupForm() {
     const handleSubmit = e => {
         e.preventDefault();
         setErrors([])
-        if (info.password === info.checkPass) {
+
+        const bdayd = `${bday.month} ${bday.day} ${bday.year}`
+        setInfo({...info, 'birthday': bdayd})
+
+        if (info.password === info.checkPass && bday.month && bday.day && bday.year) {
             return dispatch(sessionActions.signup(info))
                 .catch(async res => {
                     const data = await res.json()
@@ -85,12 +83,6 @@ export default function SignupForm() {
                     placeholder='Email address'
                     onChange={handleInput}
                 />
-                {/* <input
-                    type='date'
-                    name="birthday"
-                    placeholder='Birthday'
-                    onChange={handleInput}
-                /> */}
                 <div className="input-label">Birthday</div>
                 <div className="birthday-box">
                     <select onChange={handleBday} name='month'>
@@ -107,7 +99,7 @@ export default function SignupForm() {
                         <option value={11}>Nov</option>
                         <option value={12}>Dec</option>
                     </select>
-                    <select onChange={handleBday} onChange='day'>
+                    <select onChange={handleBday} name='day'>
                         {dayRange().map(el => (
                             <option value={el} key={`day-${el}`}>{el}</option>
                         ))}
@@ -120,15 +112,15 @@ export default function SignupForm() {
                 </div>
                 <div className="input-label">Gender</div>
                 <div className="gender-box">
-                    <span className="gender" onChange={handleSex}>
+                    <span className="gender" onChange={handleInput}>
                         <label for='male'>Female</label>
                         <input type='radio' value='female' name='gender'/>
                     </span>
-                    <span className="gender" onChange={handleSex}>
+                    <span className="gender" onChange={handleInput}>
                         <label for='male'>Male</label>
                         <input type='radio' value='male' name='gender'/>
                     </span>
-                    <span className="gender" onChange={handleSex}>
+                    <span className="gender" onChange={handleInput}>
                         <label for='male'>Custom</label>
                         <input type='radio' value='custom' name='gender'/>
                     </span>
