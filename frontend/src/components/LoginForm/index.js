@@ -15,7 +15,7 @@ export default function LoginForm() {
     const  [ errors, setErrors ] = useState([])
 
     const demoLogin = () => {
-        dispatch(sessionActions.login({ 'email': 'lovey@dove.com', 'password': 'password' }))
+        dispatch(sessionActions.login({ 'credential': 'lovey@dove.com', 'password': 'password' }))
     }
 
 
