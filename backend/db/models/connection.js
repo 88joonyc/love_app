@@ -45,5 +45,16 @@ module.exports = (sequelize, DataTypes) => {
     return await Connection.scope('currentConnection').findByPk(connection.id)
   }
 
+  Connection.delete = async function({ connectionId }) {
+    const connection = Connection.findByPk(connectionId)
+    if (!connection) throw new Error('This connection does not exists!')
+
+    await Connection.destroy({
+      where: {id: connectionId}
+    })
+
+    return connection.id
+  }
+
   return Connection;
 };
