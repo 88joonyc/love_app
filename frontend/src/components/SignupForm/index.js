@@ -87,13 +87,15 @@ export default function SignupForm() {
                             className="signup-input signup-name"
                         />
                     </div>
-                    <input
-                        type='text'
-                        name="email"
-                        placeholder='Email address'
-                        onChange={handleInput}
-                        className="signup-input signup-email"
-                    />
+                    <div className="name-container">
+                        <input
+                            type='text'
+                            name="email"
+                            placeholder='Email address'
+                            onChange={handleInput}
+                            className="signup-input signup-email"
+                        />
+                    </div>
                     <div className="input-label">Birthday</div>
                     <div className="birthday-box" className=''>
                         <select className='signup-select' onChange={handleBday} name='month'>
@@ -144,22 +146,24 @@ export default function SignupForm() {
                         className="signup-input signup-gender-input"
                     />}
                     <br />
-                    <input
-                        type='password'
-                        name="password"
-                        placeholder='Password'
-                        onChange={handleInput}
-                        className="signup-input"
-                        required
-                    />
-                    <input
-                        type='password'
-                        name="checkPass"
-                        placeholder='Confirm password'
-                        onChange={handleInput}
-                        className="signup-input"
-                        required
-                    />
+                    <div className="name-container">
+                        <input
+                            type='password'
+                            name="password"
+                            placeholder='Password'
+                            onChange={handleInput}
+                            className="signup-input"
+                            required
+                        />
+                        <input
+                            type='password'
+                            name="checkPass"
+                            placeholder='Confirm password'
+                            onChange={handleInput}
+                            className="signup-input"
+                            required
+                        />
+                    </div>
                     <br />
                     <button className="signup-button" type='submit'>Sign up</button>
                 </form>
