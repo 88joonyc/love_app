@@ -18,10 +18,12 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
 
-    static associate(models) {
-      // define association here
-    }
   });
+
+  Connection.associate = function(models) {
+    // define association here
+  }
+
   Connection.init({
     loveyId: DataTypes.STRING,
     doveyId: DataTypes.STRING,

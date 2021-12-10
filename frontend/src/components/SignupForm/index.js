@@ -67,7 +67,7 @@ export default function SignupForm() {
                     <ul>
                         {errors.map((e, i) => (
                             <div key={`${e-i}`}>{e}</div>
-                            ))}
+                        ))}
                     </ul>
                     <div className="signup-top-msg"> Create a new account</div>
                     <div className="signup-msg"> and connect with your special someone.</div>
