@@ -5,14 +5,14 @@ const makeConnection = (connection) => {
     return {
         type: MAKE_CONNECTION,
         payload: connection
-    }
-}
+    };
+};
 
 const removeConnection = () => {
     return {
         type: REMOVE_CONNECTION
-    }
-}
+    };
+};
 
 export const connect = connection => async dispatch => {
     const { loveyId, validator } = connection;
@@ -22,8 +22,16 @@ export const connect = connection => async dispatch => {
             loveyId,
             validator
         })
-    })
-    const data = await res.json()
-    dispatch(makeConnection(data.connection))
-    return res
-}
+    });
+    const data = await res.json();
+    dispatch(makeConnection(data.connection));
+    return res;
+};
+
+export const disconnect = () => async dispatch => {
+    const res = csrfFetch('/api/connection', {
+        method: 'DELETE'
+    });
+    dispatch(removeConnection());
+    return res;
+};
