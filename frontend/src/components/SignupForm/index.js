@@ -7,13 +7,20 @@ import './SignupForm.css'
 
 export default function SignupForm() {
     const dispatch = useDispatch()
+    const [ bday, setBday ] = useState({})
     const [ info, setInfo ] = useState({})
     const [ errors, setErrors ] = useState([])
     const [ custom, setCustom ] = useState(false)
-    const [ bday, setBday ] = useState()
+    const [ sex, toggleSex ] = useState("")
 
     const handleBday = e => {
         setBday({...bday, [e.target.name]: e.target.value})
+        console.log('==========================================',e.target.name, e.target.value)
+    }
+
+    const handleSex = e => {
+        toggleSex(e.target.value)
+        console.log(sex)
     }
 
     const handleInput = e => {
@@ -86,7 +93,7 @@ export default function SignupForm() {
                 /> */}
                 <div className="input-label">Birthday</div>
                 <div className="birthday-box">
-                    <select onChange={hamdleBday} name='month'>
+                    <select onChange={handleBday} name='month'>
                         <option value={1}>Jan</option>
                         <option value={2}>Feb</option>
                         <option value={3}>Mar</option>
@@ -100,30 +107,30 @@ export default function SignupForm() {
                         <option value={11}>Nov</option>
                         <option value={12}>Dec</option>
                     </select>
-                    <select onChange={hamdleBday} onChange='day'>
+                    <select onChange={handleBday} onChange='day'>
                         {dayRange().map(el => (
-                            <option key={`day-${el}`}>{el}</option>
+                            <option value={el} key={`day-${el}`}>{el}</option>
                         ))}
                     </select>
-                    <select onChange={hamdleBday} name='year'>
-                        {yearRange().map(el => (
-                            <option key={`day-${el}`}>{el}</option>
+                    <select onChange={handleBday} name='year'>
+                        {yearRange().reverse().map(el => (
+                            <option value={el} key={`day-${el}`}>{el}</option>
                         ))}
                     </select>
                 </div>
                 <div className="input-label">Gender</div>
                 <div className="gender-box">
-                    <span className="gender">
+                    <span className="gender" onChange={handleSex}>
                         <label for='male'>Female</label>
-                        <input type='radio' value='Male' name='gender'/>
+                        <input type='radio' value='female' name='gender'/>
                     </span>
-                    <span className="gender">
+                    <span className="gender" onChange={handleSex}>
                         <label for='male'>Male</label>
-                        <input type='radio' value='Male' name='gender'/>
+                        <input type='radio' value='male' name='gender'/>
                     </span>
-                    <span className="gender">
+                    <span className="gender" onChange={handleSex}>
                         <label for='male'>Custom</label>
-                        <input type='radio' value='Male' name='gender'/>
+                        <input type='radio' value='custom' name='gender'/>
                     </span>
                 </div>
                 {custom && <input
