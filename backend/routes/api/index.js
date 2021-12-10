@@ -1,14 +1,14 @@
 const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
+const connectionRouter = require('./connection.js')
 
-// test post
-// router.post('/test', function(req, res) {
-//     res.json({ requestBody: req.body });
-// });
+//=========================== domain routes ====================================================
 
 router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter)
+
+router.use('/connection', connectionRouter)
 
 module.exports = router;
