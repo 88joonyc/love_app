@@ -163,7 +163,9 @@ export default function SignupForm() {
                     <br />
                     <button className="signup-button" type='submit'>Sign up</button>
                 </form>
-                <NavLink className='signup-loginto' to='/login'>Log into your account</NavLink>
+                <div className="login-signup">
+                    <NavLink className='signup-loginto' to='/login'>Log into your account</NavLink>
+                </div>
             </div>
         </div>
     )
