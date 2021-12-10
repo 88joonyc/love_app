@@ -9,6 +9,12 @@ export default function SignupForm() {
     const dispatch = useDispatch()
     const [ info, setInfo ] = useState({})
     const [ errors, setErrors ] = useState([])
+    const [ custom, setCustom ] = useState(false)
+    const [ bday, setBday ] = useState()
+
+    const handleBday = e => {
+        setBday({...bday, [e.target.name]: e.target.value})
+    }
 
     const handleInput = e => {
         setInfo({...info, [e.target.name]: e.target.value})
@@ -80,7 +86,7 @@ export default function SignupForm() {
                 /> */}
                 <div className="input-label">Birthday</div>
                 <div className="birthday-box">
-                    <select>
+                    <select onChange={hamdleBday} name='month'>
                         <option value={1}>Jan</option>
                         <option value={2}>Feb</option>
                         <option value={3}>Mar</option>
@@ -94,16 +100,15 @@ export default function SignupForm() {
                         <option value={11}>Nov</option>
                         <option value={12}>Dec</option>
                     </select>
-                    <select>
+                    <select onChange={hamdleBday} onChange='day'>
                         {dayRange().map(el => (
                             <option key={`day-${el}`}>{el}</option>
                         ))}
                     </select>
-                    <select>
+                    <select onChange={hamdleBday} name='year'>
                         {yearRange().map(el => (
                             <option key={`day-${el}`}>{el}</option>
                         ))}
-
                     </select>
                 </div>
                 <div className="input-label">Gender</div>
@@ -121,12 +126,12 @@ export default function SignupForm() {
                         <input type='radio' value='Male' name='gender'/>
                     </span>
                 </div>
-                <input
+                {custom && <input
                     type='text'
                     name="gender"
                     placeholder='Gender'
                     onChange={handleInput}
-                />
+                />}
                 <input
                     type='text'
                     name="password"
