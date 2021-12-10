@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 import * as sessionActions from '../../actions/session'
 
@@ -160,6 +161,7 @@ export default function SignupForm() {
                     <br />
                     <button className="signup-button" type='submit'>Sign up</button>
                 </form>
+                <NavLink className='signup-loginto' to='/login'>Log into your account</NavLink>
             </div>
         </div>
     )

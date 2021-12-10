@@ -14,6 +14,11 @@ export default function LoginForm() {
     const  [ password, setPassword ] = useState('')
     const  [ errors, setErrors ] = useState([])
 
+    const demoLogin = () => {
+        dispatch(sessionActions.login({ 'email': 'lovey@dove.com', 'password': 'password' }))
+    }
+
+
     if (sessionUser) return (
         <Navigate replace to='/' />
     );
@@ -61,10 +66,15 @@ export default function LoginForm() {
                         type='submit'
                         className='login-button'
                     >Log In</button>
+                    <button
+                        type='button'
+                        className='login-button'
+                        onClick={demoLogin}
+                    >Demo User</button>
                 </form>
                 <div className='or-break'> ━━━━━━━━━━━ or ━━━━━━━━━━━ </div>
                 <div className='signup-link-container'>
-                    <NavLink className='signup-link' to='/signup'>sign up</NavLink>
+                    <NavLink className='signup-link' to='/signup'>Dont have an account?</NavLink>
                 </div>
             </div>
         </div>

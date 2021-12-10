@@ -35,16 +35,22 @@
     width: 100%;
 }
 
+.gender-box {
+    margin-top: 15px;
+}
+
 .signup-gender {
     border: 1px solid rgb(223, 223, 223);
     border-radius: 5px;
-    padding: 13px;
+    padding: 10px 30px 10px 30px;
     margin-left: 3px;
     margin-right: 3px;
 }
 
 .signup-gender-input {
-    width: 100%;
+    width: 97%;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .signup-select {
@@ -70,8 +76,18 @@
     font-weight: bold;
 }
 
+.signup-loginto {
+    text-decoration: none;
+    color: rgb(114, 114, 199);
+    text-align: center;
+}
+
 @media screen and (max-width: 600px) {
     .signup-form-container {
         width: 300px;
+    }
+    .gender-box {
+        display: flex;
+        flex-direction: column;
     }
 }
