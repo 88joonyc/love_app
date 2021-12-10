@@ -13,6 +13,7 @@
 .login-wrapper {
     background-color: rgb(244, 242, 242);
     padding-top: 40px;
+    padding-bottom: 5%;
 }
 
 @media screen and (max-width: 600px) {

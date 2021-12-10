@@ -69,7 +69,7 @@ export default function SignupForm() {
                             <div key={`${e-i}`}>{e}</div>
                             ))}
                     </ul>
-                    <div> Create a new account</div>
+                    <div className="signup-top-msg"> Create a new account</div>
                     <div className="signup-msg"> and connect with your special someone.</div>
                     <div className="name-container">
                         <input
@@ -150,6 +150,7 @@ export default function SignupForm() {
                         placeholder='Password'
                         onChange={handleInput}
                         className="signup-input"
+                        required
                     />
                     <input
                         type='password'
@@ -157,6 +158,7 @@ export default function SignupForm() {
                         placeholder='Confirm password'
                         onChange={handleInput}
                         className="signup-input"
+                        required
                     />
                     <br />
                     <button className="signup-button" type='submit'>Sign up</button>
