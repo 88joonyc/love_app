@@ -69,7 +69,7 @@ export default function SignupForm() {
                             ))}
                     </ul>
                     <div> Create a new account</div>
-                    <div> and connect with your special someone.</div>
+                    <div className="signup-msg"> and connect with your special someone.</div>
                     <input
                         type='text'
                         name="firstName"

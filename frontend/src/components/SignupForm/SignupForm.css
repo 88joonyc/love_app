@@ -1,3 +1,9 @@
+.signup-msg {
+    border-bottom: 1px solid black;
+    width: 100%
+}
+
+
 .signup-form-container {
     display: flex;
     width: 400px;
@@ -5,6 +11,7 @@
     border-radius: 5px;
     padding: 30px;
     box-shadow: 2px 2px 5px black;
+    background-color: white;
 }
 
 .signup-form {
@@ -13,7 +20,7 @@
 }
 
 .signup-input {
-    height: 50px;
+    height: 40px;
     border-radius: 5px;
     border: 1px solid rgb(223, 223, 223);
     width: 48%;
@@ -45,4 +52,8 @@
     width: 40%;
     height: 40px;
     border-radius: 5px;
+    background-color: rgb(46, 225, 46);
+    color: white;
+    font-size: large;
+    font-weight: bold;
 }
