@@ -121,15 +121,15 @@ export default function SignupForm() {
                     </div>
                     <div className="input-label">Gender</div>
                     <div className="gender-box">
-                        <span className="gender" onChange={handleInput, () => setCustom(false)}>
+                        <span className="signup-gender" onChange={handleInput, () => setCustom(false)}>
                             <label for='male'>Female</label>
                             <input type='radio' value='female' name='gender'/>
                         </span>
-                        <span className="gender" onChange={handleInput, () => setCustom(false)}>
+                        <span className="signup-gender" onChange={handleInput, () => setCustom(false)}>
                             <label for='male'>Male</label>
                             <input type='radio' value='male' name='gender'/>
                         </span>
-                        <span className="gender" onChange={() => setCustom(true)}>
+                        <span className="signup-gender" onChange={() => setCustom(true)}>
                             <label for='male'>Custom</label>
                             <input type='radio' value='custom' name='gender'/>
                         </span>
