@@ -9,7 +9,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       loveyId: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       doveyId: {
         type: Sequelize.STRING

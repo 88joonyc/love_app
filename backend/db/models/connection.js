@@ -1,12 +1,14 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+
+const {validator} = require('sequelize')
+const bcrypt = require('bcryptjs')
+
 module.exports = (sequelize, DataTypes) => {
   const Connection = sequelize.define('Connection', {
 
     loveyId: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
 
     doveyId: {
@@ -24,13 +26,10 @@ module.exports = (sequelize, DataTypes) => {
     // define association here
   }
 
-  Connection.init({
-    loveyId: DataTypes.STRING,
-    doveyId: DataTypes.STRING,
-    validator: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Connection',
-  });
+  Connection.connect = async function({  }){
+
+  }
+
+
   return Connection;
 };
