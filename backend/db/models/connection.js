@@ -5,16 +5,23 @@ const bcrypt = require('bcryptjs');
 
 module.exports = (sequelize, DataTypes) => {
   const Connection = sequelize.define('Connection', {
-
     loveyId: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      references: {
+        model: {
+          tableName: "Users"
+        },
+      },
     },
-
     doveyId: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {
+        model: {
+          tableName: "Users"
+        },
+      },
     },
-
     validator: {
       type: DataTypes.STRING.BINARY,
       allowNull: false
@@ -29,8 +36,8 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Connection.associate = function(models) {
-    // Connection.belongsTo(models.Connection, {foreignKey: "loveyId"})
-    // Connection.belongsTo(models.Connection, {foreignKey: "doveyId"})
+    Connection.belongsTo(models.User, {foreignKey: "loveyId"})
+    // Connection.belongsTo(models.User, {foreignKey: "doveyId"})
   }
 
   Connection.getCurrentConnectionById = async function (id) {

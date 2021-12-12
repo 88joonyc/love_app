@@ -11,6 +11,15 @@ const validateConnection = (
         .withMessage('You need to have at least one loverbird to connect.')
 )
 
+router.get('/',
+    asyncHandler( async (req, res) => {
+        const connection = await Connection.findAll()
+        return res.json(
+            connection
+        )
+    })
+)
+
 router.post('/',
     asyncHandler(async (req, res) => {
         const { loveyId, validator } = req.body
