@@ -1,7 +1,7 @@
 const { check } = require("express-validator");
 const asyncHandler = require('express-async-handler');
 
-const { Connection } = require('../../db/models')
+const { Connection, User } = require('../../db/models')
 
 const router = require("./users");
 
@@ -13,7 +13,9 @@ const validateConnection = (
 
 router.get('/',
     asyncHandler( async (req, res) => {
-        const connection = await Connection.findAll()
+        const connection = await Connection.findAll(
+            {include: ['lovey', 'dovey']}
+        )
         return res.json(
             connection
         )
