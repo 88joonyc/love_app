@@ -32,7 +32,7 @@ const Navigation = ({isLoaded, connected}) => {
                     <li>
                         <NavLink to='/'>Home</NavLink>
                         {isLoaded && naviLinks}
-                        {connected && <NavLink to='/connect'>Connect</NavLink>}
+                        {!connected && <NavLink to='/connect'>Connect</NavLink>}
                         <NavLink to='/about'>About</NavLink>
                     </li>
                 </ul>

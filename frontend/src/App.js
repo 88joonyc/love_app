@@ -32,7 +32,7 @@ function App() {
         <Routes>
           <Route path='/login' element={<LoginForm />} />
           <Route path='/signup' element={<SignupForm />} />
-          {connected && <Route path='/connect' element={<Connect />} />}
+          {!connected && <Route path='/connect' element={<Connect />} />}
         </Routes>
       )}
       <Footer />
