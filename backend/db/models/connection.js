@@ -1,6 +1,6 @@
 'use strict';
 
-const {validator} = require('sequelize')
+const {Validator} = require('sequelize')
 const bcrypt = require('bcryptjs');
 
 module.exports = (sequelize, DataTypes) => {
@@ -29,6 +29,17 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       unique: true,
     },
+  }, {
+    defaultScope: {
+      attributes: {
+        exclude: [ 'validator' ],
+      },
+    },
+    scopes: {
+      loggedConnection: {
+        attributes: {},
+      },
+    },
 
     // scopes: {
     //   currentConnection: {
@@ -44,7 +55,14 @@ module.exports = (sequelize, DataTypes) => {
   }
 
   Connection.getCurrentConnectionById = async function (id) {
-    return await Connection.scope('currentConnection').findByPk(id)
+    const { Op } = require('sequelize');
+    const connection = await Connection.scope('loggedConnection').findOne({
+      where: {
+        [Op.or]: [{
+          loveyId: id, doveyId: id
+        }],
+      }
+    })
   }
 
   Connection.connect = async function({ loveyId, validator }){
