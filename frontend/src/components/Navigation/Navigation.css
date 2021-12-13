@@ -1,0 +1,12 @@
+body {
+    margin: 0
+}
+
+.navigation-bar {
+    box-shadow: 1px 1px 5px rgb(194, 194, 198);
+    height: 60px;
+}
+
+.navigation-unordered {
+    margin: 0;
+}

@@ -5,13 +5,13 @@ import { loadConnection } from "../../actions/connection";
 
 const Footer = () => {
     const sessUser = useSelector(state => state.session.user)
-    const conn = useSelector(state => state.connection)
+    // const conn = useSelector(state => state.connection)
 
 
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(loadConnection())
+        // dispatch(loadConnection())
     }, [])
 
 
@@ -20,6 +20,100 @@ const Footer = () => {
         footer = (
             <>
                 <div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
+                    <div>hi</div>
                     <div>hi</div>
                     <div>hi</div>
                     <div>hi</div>

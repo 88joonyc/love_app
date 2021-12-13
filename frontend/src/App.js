@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from 'react-router-dom';
 
 import * as sessionActions from './actions/session'
+import { loadConnection } from "./actions/connection";
 
 import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
@@ -17,9 +18,10 @@ function App() {
   const user = useSelector(state => state.session.user)
 
   useEffect(() => {
-    dispatch(sessionActions.restoreUser())
-      .then(() => setLoaded(true))
+    dispatch(sessionActions.restoreUser()).then(() => setLoaded(true))
+    dispatch(loadConnection()).then(() => setConnected(true))
   }, [dispatch])
+
 
   return (
     <>

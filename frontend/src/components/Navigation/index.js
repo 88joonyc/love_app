@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Profile from "./Profile";
 
+import './Navigation.css'
+
 
 const Navigation = ({isLoaded}) => {
     const user = useSelector(state => state.session.user)
@@ -24,14 +26,18 @@ const Navigation = ({isLoaded}) => {
     }
 
     return (
-        <>
-            <ul>
-                <li>
-                    <NavLink exact to='/'>Home</NavLink>
-                    {isLoaded && naviLinks}
-                </li>
-            </ul>
-        </>
+        <div className="navigation-bar">
+            <div className="navi-buttons">
+                <ul className="navigation-unordered">
+                    <li>
+                        <NavLink to='/'>Home</NavLink>
+                        {isLoaded && naviLinks}
+                        <NavLink to='/connect'>Connect</NavLink>
+                        <NavLink to='/about'>About</NavLink>
+                    </li>
+                </ul>
+            </div>
+        </div>
     )
 }
 
