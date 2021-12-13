@@ -26,7 +26,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     validator: {
       type: DataTypes.STRING.BINARY,
-      allowNull: false
+      allowNull: false,
+      unique: true,
     },
 
     // scopes: {
