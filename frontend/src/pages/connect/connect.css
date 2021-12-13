@@ -1,4 +1,19 @@
 .connect-body {
-    background-color: rgb(239, 239, 111);
     height: 700px;
+    background-color: rgb(242, 242, 142);
+}
+
+.connect-box {
+    background-color: white;
+    height: 300px;
+    width: 500px;
+    position: relative;
+    top: 140px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+    .connect-box {
+        width: 300px;
+    }
 }
