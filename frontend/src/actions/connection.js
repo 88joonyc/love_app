@@ -1,5 +1,12 @@
 import { csrfFetch } from "../store/csrf";
-import { MAKE_CONNECTION, REMOVE_CONNECTION } from "../store/connection";
+import { MAKE_CONNECTION, REMOVE_CONNECTION, LOAD_CONNECTION } from "../store/connection";
+
+const load = (connection) => {
+    return {
+        type: LOAD_CONNECTION,
+        payload: connection
+    }
+}
 
 const makeConnection = (connection) => {
     return {
@@ -13,6 +20,12 @@ const removeConnection = () => {
         type: REMOVE_CONNECTION
     };
 };
+
+export const loadConnection = () => async dispatch => {
+    const connection = await csrfFetch('/api/connection')
+    const res = await connection.json()
+    dispatch(load(res))
+}
 
 export const connect = connection => async dispatch => {
     const { loveyId, validator } = connection;

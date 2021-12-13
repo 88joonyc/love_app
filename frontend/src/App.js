@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 function App() {
   const dispatch = useDispatch()
   const [ isLoaded, setLoaded ] = useState(false)
+  const [ connected, setConnected ] = useState(false)
 
   const user = useSelector(state => state.session.user)
 

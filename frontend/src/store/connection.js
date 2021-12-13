@@ -1,5 +1,6 @@
 export const MAKE_CONNECTION = 'connection/makeConnection';
 export const REMOVE_CONNECTION = 'connection/removeConnection';
+export const LOAD_CONNECTION = 'connection/loadConnection';
 
 const initialState = {
     connection: null
@@ -8,6 +9,10 @@ const initialState = {
 export const connectionReducer = (state = initialState, action ) => {
     let newState
     switch (action.type) {
+        case LOAD_CONNECTION:
+            if (action.connection) {
+                return {'connection': action.connection}
+            }
         case MAKE_CONNECTION:
             newState = Object.assign({}, state)
             newState.connection = action.payload

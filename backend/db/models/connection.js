@@ -36,8 +36,8 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Connection.associate = function(models) {
-    Connection.belongsTo(models.User, { foreignKey: "doveyId", as: 'dovey'})
     Connection.belongsTo(models.User, { foreignKey: "loveyId", as: 'lovey'})
+    Connection.belongsTo(models.User, { foreignKey: "doveyId", as: 'dovey'})
   }
 
   Connection.getCurrentConnectionById = async function (id) {
