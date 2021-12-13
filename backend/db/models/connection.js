@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     loveyId: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      unique: true,
       references: {
         model: {
           tableName: "Users"
@@ -16,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     doveyId: {
       type: DataTypes.INTEGER,
+      unique: true,
       references: {
         model: {
           tableName: "Users"

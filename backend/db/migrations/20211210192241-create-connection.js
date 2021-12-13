@@ -11,9 +11,11 @@ module.exports = {
       loveyId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        unique: true
       },
       doveyId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        unique: true
       },
       validator: {
         type: Sequelize.STRING.BINARY,
