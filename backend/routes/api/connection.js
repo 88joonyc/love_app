@@ -21,7 +21,24 @@ router.get('/',
         )
     })
 )
+// login connected
+router.post('/connect',
+    asyncHandler( async (req, res, next) => {
+        const { id } = req.body;
+        const logged = await Connection.getCurrentConnectionById({ id });
+        if (!logged) {
+            const err = new Error('No connection');
+            err.status = 401;
+            err.title = 'No Connection';
+            err.errors = [ 'There is no connection' ]
+            return next(err)
+        }
 
+
+    }))
+
+
+// create a new connection
 router.post('/',
     asyncHandler(async (req, res) => {
         const { loveyId, validator } = req.body
