@@ -6,7 +6,7 @@ import Profile from "./Profile";
 import './Navigation.css'
 
 
-const Navigation = ({isLoaded}) => {
+const Navigation = ({isLoaded, connected}) => {
     const user = useSelector(state => state.session.user)
 
     let naviLinks
@@ -32,7 +32,7 @@ const Navigation = ({isLoaded}) => {
                     <li>
                         <NavLink to='/'>Home</NavLink>
                         {isLoaded && naviLinks}
-                        <NavLink to='/connect'>Connect</NavLink>
+                        {connected && <NavLink to='/connect'>Connect</NavLink>}
                         <NavLink to='/about'>About</NavLink>
                     </li>
                 </ul>

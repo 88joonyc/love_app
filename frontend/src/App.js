@@ -3,12 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from 'react-router-dom';
 
 import * as sessionActions from './actions/session'
-import { loadConnection } from "./actions/connection";
+import { connect, loadConnection } from "./actions/connection";
 
 import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+
+import Connect from "./pages/connect";
 
 function App() {
   const dispatch = useDispatch()
@@ -25,11 +27,12 @@ function App() {
 
   return (
     <>
-      {user && <Navigation isLoaded={isLoaded} />}
+      {user && <Navigation isLoaded={isLoaded} connected={connected} />}
       {isLoaded && (
         <Routes>
           <Route path='/login' element={<LoginForm />} />
           <Route path='/signup' element={<SignupForm />} />
+          {connected && <Route path='/connect' element={<Connect />} />}
         </Routes>
       )}
       <Footer />
