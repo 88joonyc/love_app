@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import * as sessionActions from '../../actions/session'
 import { disconnect } from "../../actions/connection";
 
-const Profile = ({ user, setLoaded, setConnected }) => {
+const Profile = ({ user, setConnected }) => {
     const dispatch = useDispatch()
     const [ showMenu, setShowMenu ] = useState(false)
 

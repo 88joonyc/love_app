@@ -12,7 +12,7 @@ export default function SignupForm() {
     const [ info, setInfo ] = useState({})
     const [ errors, setErrors ] = useState([])
     const [ custom, setCustom ] = useState(false)
-    const [ sex, toggleSex ] = useState("")
+    // const [ sex, toggleSex ] = useState("")
 
     const handleBday = e => {
         setBday({...bday, [e.target.name]: e.target.value})
@@ -59,7 +59,7 @@ export default function SignupForm() {
     const form = (
         <div className="login-wrapper">
             <div className='logo-container'>
-                <img className='luvApp-logo' />
+                <img alt="luveapp-logo" className='luvApp-logo' />
             </div>
             <div className="signup-form-container">
 
@@ -97,7 +97,7 @@ export default function SignupForm() {
                         />
                     </div>
                     <div className="input-label">Birthday</div>
-                    <div className="birthday-box" className=''>
+                    <div className="birthday-box">
                         <select className='signup-select' onChange={handleBday} name='month'>
                             <option value={1}>Jan</option>
                             <option value={2}>Feb</option>
@@ -125,11 +125,11 @@ export default function SignupForm() {
                     </div>
                     <div className="input-label">Gender</div>
                     <div className="gender-box">
-                        <span className="signup-gender" onChange={handleInput, () => setCustom(false)}>
+                        <span className="signup-gender" onChange={(handleInput, () => setCustom(false))}>
                             <label for='male'>Female</label>
                             <input type='radio' value='female' name='gender'/>
                         </span>
-                        <span className="signup-gender" onChange={handleInput, () => setCustom(false)}>
+                        <span className="signup-gender" onChange={(handleInput, () => setCustom(false))}>
                             <label for='male'>Male</label>
                             <input type='radio' value='male' name='gender'/>
                         </span>

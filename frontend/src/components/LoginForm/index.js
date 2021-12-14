@@ -36,7 +36,7 @@ export default function LoginForm() {
     const form = (
         <div className='login-wrapper'>
             <div className='logo-container'>
-                <img className='luvApp-logo' />
+                <img alt='luvapp-logo' className='luvApp-logo' />
             </div>
             <div className='login-form-container'>
                 <div className='loginto-msg'>Log into LuvApp</div>
