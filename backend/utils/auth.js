@@ -23,26 +23,6 @@ const setTokenCookie = ( res, user ) => {
     return token;
 };
 
-//set token for connected
-const setConnectedTokenCookie = ( res, user ) => {
-    const token = jwt.sign(
-        { data: user.toSafeObject() },
-        secret,
-        { expiresIn: parseInt(expiresIn) }, // .env set for 604800s === 1 week
-    );
-
-    const isProduction = process.env.NODE_ENV === 'production';
-
-    res.cookie('token', token, {
-        maxAge: expiresIn * 1000,
-        httpOnly: true,
-        secure: isProduction,
-        sameSite: isProduction && 'Lax',
-    });
-
-    return token;
-};
-
 const restoreUser = (req, res, next) => {
     const { token } = req.cookies;
 
