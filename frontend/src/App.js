@@ -23,9 +23,12 @@ function App() {
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setLoaded(true))
     // dispatch(loadConnection()).then(() => setConnected(true))
-    dispatch(couple({ id: user?.id }))
   }, [dispatch])
 
+  if (isLoaded) {
+    dispatch(couple({ id: user?.id }))
+
+  }
 
   return (
     <>
