@@ -55,9 +55,14 @@ module.exports = (sequelize, DataTypes) => {
     const { Op } = require('sequelize');
     const connection = await Connection.scope('connect').findOne({
       where: {
-        [Op.or]: [{
-          loveyId: id
-        }, {doveyId: id}],
+        [Op.or]: [
+          {
+            loveyId: id
+          },
+          {
+            doveyId: id
+          }
+        ],
       }
     })
     if (connection) {

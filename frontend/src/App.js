@@ -18,11 +18,12 @@ function App() {
   const [ connected, setConnected ] = useState(false)
 
   const user = useSelector(state => state.session.user)
+  console.log('================thisis id===================', user?.id)
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setLoaded(true))
     // dispatch(loadConnection()).then(() => setConnected(true))
-    dispatch(couple({id:3}))
+    dispatch(couple({ id: user?.id }))
   }, [dispatch])
 
 
