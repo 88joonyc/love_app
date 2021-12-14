@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setLoaded(true))
     // dispatch(loadConnection()).then(() => setConnected(true))
-    dispatch(couple({id:1}))
+    dispatch(couple({id:3}))
   }, [dispatch])
 
 

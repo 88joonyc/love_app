@@ -57,7 +57,7 @@ module.exports = (sequelize, DataTypes) => {
       where: {
         [Op.or]: [{
           loveyId: id
-        }],
+        }, {doveyId: id}],
       }
     })
     if (connection) {
