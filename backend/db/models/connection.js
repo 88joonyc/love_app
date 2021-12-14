@@ -51,12 +51,12 @@ module.exports = (sequelize, DataTypes) => {
     Connection.belongsTo(models.User, { foreignKey: "doveyId", as: 'dovey'})
   }
 
-  Connection.getCurrentConnectionById = async function (id) {
+  Connection.getCurrentConnectionById = async function ({id}) {
     const { Op } = require('sequelize');
     const connection = await Connection.scope('connect').findOne({
       where: {
         [Op.or]: [{
-          loveyId: id, doveyId: id
+          loveyId: id
         }],
       }
     })

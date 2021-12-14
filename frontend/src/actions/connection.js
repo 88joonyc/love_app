@@ -35,6 +35,7 @@ export const couple = connection => async dispatch => {
             id
         })
     });
+    console.log('==========id======================',res)
     const data = await res.json();
     dispatch(makeConnection(data.connection));
     return res;
