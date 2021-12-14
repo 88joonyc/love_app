@@ -25,7 +25,7 @@ function App() {
   }, [dispatch])
 
   if (isLoaded) {
-    dispatch(couple({ id: user?.id })).then(() => setConnected(false))
+    dispatch(couple({ id: user?.id }))
   }
 
   return (

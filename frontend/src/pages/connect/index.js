@@ -16,7 +16,7 @@ const Connect = () => {
                     {num}
                 </div>
                 <form className="connect-form">
-                    <input hidden type='number' value={currentUser.id}/>
+                    <input hidden type='number' value={currentUser?.id}/>
                     <input hidden type='number' value={num}/>
                     <button className="connect-button">make a new connection</button>
                     <button className="delete-button">break connection</button>
