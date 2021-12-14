@@ -22,7 +22,6 @@ function App() {
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setLoaded(true))
-    // dispatch(loadConnection()).then(() => setConnected(true))
   }, [dispatch])
 
   useEffect(() => {
