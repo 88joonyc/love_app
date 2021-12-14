@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import * as sessionActions from '../../actions/session'
 import { disconnect } from "../../actions/connection";
 
-const Profile = ({ user }) => {
+const Profile = ({ user, setLoaded, setConnected }) => {
     const dispatch = useDispatch()
     const [ showMenu, setShowMenu ] = useState(false)
 
@@ -29,6 +29,8 @@ const Profile = ({ user }) => {
         e.preventDefault()
         dispatch(sessionActions.logout())
         dispatch(disconnect())
+        setConnected(true)
+        setLoaded(false)
     }
 
     return (

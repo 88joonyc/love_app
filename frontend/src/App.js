@@ -26,12 +26,11 @@ function App() {
 
   if (isLoaded) {
     dispatch(couple({ id: user?.id })).then(() => setConnected(false))
-
   }
 
   return (
     <>
-      {user && <Navigation isLoaded={isLoaded} connected={connected} />}
+      {user && <Navigation isLoaded={isLoaded} connected={connected} setLoaded={setLoaded} setConnected={setConnected}/>}
       {isLoaded && (
         <Routes>
           <Route path='/login' element={<LoginForm />} />

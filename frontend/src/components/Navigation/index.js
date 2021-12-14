@@ -6,14 +6,14 @@ import Profile from "./Profile";
 import './Navigation.css'
 
 
-const Navigation = ({isLoaded, connected}) => {
+const Navigation = ({isLoaded, connected, setConnected, setLoaded}) => {
     const user = useSelector(state => state.session.user)
 
     let naviLinks
     if (user) {
         naviLinks = (
             <>
-                <Profile user={user} />
+                <Profile user={user} setLoaded={setLoaded} setConnected={setConnected} />
             </>
         )
     } else {
@@ -24,6 +24,7 @@ const Navigation = ({isLoaded, connected}) => {
             </>
         )
     }
+
 
     return (
         <div className="navigation-bar">
