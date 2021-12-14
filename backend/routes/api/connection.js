@@ -26,7 +26,6 @@ router.post('/connect',
     asyncHandler( async (req, res, next) => {
         const { id } = req.body;
         const logged = await Connection.getCurrentConnectionById({ id });
-        console.log('========================disid======================',logged)
         if (!logged) {
             const err = new Error('No connection');
             err.status = 401;

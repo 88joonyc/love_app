@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import { useDispatch } from "react-redux";
+
 import * as sessionActions from '../../actions/session'
+import { disconnect } from "../../actions/connection";
 
 const Profile = ({ user }) => {
     const dispatch = useDispatch()
@@ -26,6 +28,7 @@ const Profile = ({ user }) => {
     const logout = e => {
         e.preventDefault()
         dispatch(sessionActions.logout())
+        dispatch(disconnect())
     }
 
     return (

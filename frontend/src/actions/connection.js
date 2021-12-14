@@ -36,7 +36,6 @@ export const couple = connection => async dispatch => {
         })
     });
     const data = await res.json();
-    console.log('==========id======================',data)
     dispatch(makeConnection(data));
     return res;
 };
@@ -55,8 +54,16 @@ export const connect = connection => async dispatch => {
     return res;
 };
 
-export const disconnect = (id) => async dispatch => {
-    const res = csrfFetch(`/api/connection/${id}`, {
+// export const disconnect = (id) => async dispatch => {
+//     const res = csrfFetch(`/api/connection/${id}`, {
+//         method: 'DELETE'
+//     });
+//     dispatch(removeConnection());
+//     return res;
+// };
+
+export const disconnect = () => async dispatch => {
+    const res = csrfFetch(`/api/connection`, {
         method: 'DELETE'
     });
     dispatch(removeConnection());

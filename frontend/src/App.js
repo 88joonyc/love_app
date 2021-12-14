@@ -15,10 +15,9 @@ import Connect from "./pages/connect";
 function App() {
   const dispatch = useDispatch()
   const [ isLoaded, setLoaded ] = useState(false)
-  const [ connected, setConnected ] = useState(false)
+  const [ connected, setConnected ] = useState(true)
 
   const user = useSelector(state => state.session.user)
-  console.log('================thisis id===================', user?.id)
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setLoaded(true))
@@ -26,7 +25,7 @@ function App() {
   }, [dispatch])
 
   if (isLoaded) {
-    dispatch(couple({ id: user?.id }))
+    dispatch(couple({ id: user?.id })).then(() => setConnected(false))
 
   }
 
@@ -37,7 +36,7 @@ function App() {
         <Routes>
           <Route path='/login' element={<LoginForm />} />
           <Route path='/signup' element={<SignupForm />} />
-          {!connected && <Route path='/connect' element={<Connect />} />}
+          {connected && <Route path='/connect' element={<Connect />} />}
         </Routes>
       )}
       <Footer />
