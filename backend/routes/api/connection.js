@@ -34,6 +34,10 @@ router.post('/connect',
             return next(err)
         }
 
+        return res.json({
+            logged
+        })
+
 
     }))
 

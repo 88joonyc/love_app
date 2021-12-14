@@ -27,6 +27,19 @@ export const loadConnection = () => async dispatch => {
     dispatch(load(res))
 }
 
+export const couple = connection => async dispatch => {
+    const { id } = connection;
+    const res = await csrfFetch('/api/connection/connect', {
+        method: 'POST',
+        body: JSON.stringify({
+            id
+        })
+    });
+    const data = await res.json();
+    dispatch(makeConnection(data.connection));
+    return res;
+};
+
 export const connect = connection => async dispatch => {
     const { loveyId, validator } = connection;
     const res = await csrfFetch('/api/connection', {
