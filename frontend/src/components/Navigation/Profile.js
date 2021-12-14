@@ -28,7 +28,8 @@ const Profile = ({ user, setLoaded, setConnected }) => {
     const logout = e => {
         e.preventDefault()
         dispatch(sessionActions.logout())
-        dispatch(disconnect()).then(() => setConnected(true))
+        dispatch(disconnect())
+        setConnected(true)
     }
 
     return (

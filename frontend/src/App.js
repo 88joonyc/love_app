@@ -18,15 +18,16 @@ function App() {
   const [ connected, setConnected ] = useState(true)
 
   const user = useSelector(state => state.session.user)
+  const connect = useSelector(state => state.connection.connection)
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setLoaded(true))
     // dispatch(loadConnection()).then(() => setConnected(true))
   }, [dispatch])
 
-  if (isLoaded) {
-    dispatch(couple({ id: user?.id }))
-  }
+  useEffect(() => {
+    dispatch(couple({id: user?.id})).then(() => setConnected(false))
+  }, [user?.id])
 
   return (
     <>
