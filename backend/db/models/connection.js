@@ -39,13 +39,10 @@ module.exports = (sequelize, DataTypes) => {
       loggedConnection: {
         attributes: {},
       },
+      connect: {
+        attributes: {}
+      }
     },
-
-    // scopes: {
-    //   currentConnection: {
-    //     attributes: { exclude: ['validator'] }
-    //   }
-    // }
 
   });
 
@@ -56,13 +53,16 @@ module.exports = (sequelize, DataTypes) => {
 
   Connection.getCurrentConnectionById = async function (id) {
     const { Op } = require('sequelize');
-    const connection = await Connection.scope('loggedConnection').findOne({
+    const connection = await Connection.scope('connect').findOne({
       where: {
         [Op.or]: [{
           loveyId: id, doveyId: id
         }],
       }
     })
+    if (connection) {
+      return await Connection.scope('loggedConnection').findByPk(connection.id)
+    }
   }
 
   Connection.connect = async function({ loveyId, validator }){
