@@ -34,9 +34,9 @@ router.post('/connect',
             return next(err)
         }
 
-        return res.json({
+        return res.json(
             logged
-        })
+        )
 
 
     }))
