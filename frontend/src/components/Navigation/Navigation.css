@@ -10,3 +10,15 @@ body {
 .navigation-unordered {
     margin: 0;
 }
+
+.navigation-links {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.navlink {
+    cursor: pointer;
+}

@@ -13,7 +13,7 @@ const Navigation = ({isLoaded, connected, setConnected, setLoaded}) => {
     if (user) {
         naviLinks = (
             <>
-                <Profile user={user} setLoaded={setLoaded} setConnected={setConnected} />
+                <Profile className='navlink' user={user} setLoaded={setLoaded} setConnected={setConnected} />
             </>
         )
     } else {
@@ -29,14 +29,14 @@ const Navigation = ({isLoaded, connected, setConnected, setLoaded}) => {
     return (
         <div className="navigation-bar">
             <div className="navi-buttons">
-                <ul className="navigation-unordered">
-                    <li>
-                        <NavLink to='/'>Home</NavLink>
+                <div className="navigation-unordered">
+                    <div className="navigation-links">
+                        <NavLink className='navlink' to='/'>Home</NavLink>
                         {isLoaded && naviLinks}
-                        {<NavLink to='/connect'>Connect</NavLink>}
-                        <NavLink to='/about'>About</NavLink>
-                    </li>
-                </ul>
+                        {<NavLink className='navlink' to='/connect'>Connect</NavLink>}
+                        <NavLink className='navlink' to='/about'>About</NavLink>
+                    </div>
+                </div>
             </div>
         </div>
     )
