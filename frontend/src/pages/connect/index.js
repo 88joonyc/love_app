@@ -18,7 +18,9 @@ const Connect = () => {
 
     }
 
-    const handleConnect = () => {
+    const handleConnect = e => {
+        e.preventDefault()
+
         dispatch(connectAction.connect({
             loveyId: currentUser.id,
             validator: num
@@ -34,7 +36,7 @@ const Connect = () => {
                 <form className="connect-form">
                     <input hidden type='number' value={currentUser?.id}/>
                     <input hidden type='number' value={num}/>
-                    {!connectStatus && <button onClick={handleConnect} className="connect-button">make a new connection</button>}
+                    {!connectStatus && <button onClick={e => handleConnect(e)} className="connect-button">make a new connection</button>}
                     <button onClick={handleBreak} className="delete-button">break connection</button>
                 </form>
             </div>
