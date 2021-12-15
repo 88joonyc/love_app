@@ -4,6 +4,7 @@ const asyncHandler = require('express-async-handler');
 const { Connection, User } = require('../../db/models')
 
 const router = require("./users");
+const connection = require("../../db/models/connection");
 
 const validateConnection = (
     check('loveyId')
@@ -70,6 +71,7 @@ router.delete('/',
         const {id} = req.body
         const connection = await Connection.findByPk(id)
         connection.destroy()
+        return connection
     }
 )
 
