@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     validator: {
-      type: DataTypes.STRING.BINARY,
+      type: DataTypes.INTEGER,
       allowNull: false,
       unique: true,
     },
@@ -71,12 +71,12 @@ module.exports = (sequelize, DataTypes) => {
   }
 
   Connection.connect = async function({ loveyId, validator }){
-    const hashedValidator = bcrypt.hashSync(validator)
+    // const hashedValidator = bcrypt.hashSync(validator)
     const connection = await Connection.create({
       loveyId,
       validator
     })
-    return await Connection.scope('currentConnection').findByPk(connection.id)
+    return await Connection.scope('loggedConnection').findByPk(connection.id)
   }
 
   Connection.delete = async function({ connectionId }) {

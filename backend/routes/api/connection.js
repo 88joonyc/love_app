@@ -43,7 +43,7 @@ router.post('/connect',
 
 
 // create a new connection
-router.post('/',
+router.post('/make',
     asyncHandler(async (req, res) => {
         const { loveyId, validator } = req.body
         const connection = await Connection.connect({ loveyId, validator })

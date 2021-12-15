@@ -18,7 +18,7 @@ module.exports = {
         unique: true
       },
       validator: {
-        type: Sequelize.STRING.BINARY,
+        type: Sequelize.INTEGER,
         allowNull: false
       },
       createdAt: {

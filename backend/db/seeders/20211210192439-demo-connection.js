@@ -6,7 +6,7 @@ module.exports = {
       {
         loveyId: 1,
         doveyId: 2,
-        validator: 'As!fS$5f'
+        validator: 12344253
       }
     ])
   },
