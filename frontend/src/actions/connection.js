@@ -63,11 +63,8 @@ export const connect = connection => async dispatch => {
 // };
 
 export const disconnect = id => async dispatch => {
-    const res = csrfFetch(`/api/connection`, {
+    const res = csrfFetch(`/api/connection/${id}`, {
         method: 'DELETE',
-        body: JSON.stringify({
-            id
-        })
     });
     dispatch(removeConnection());
     return res;

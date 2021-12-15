@@ -66,11 +66,10 @@ router.put('/:id',
     }
 )
 
-router.delete('/',
+router.delete('/:id',
     async(req, res) => {
-        const {id} = req.body
-        const connection = await Connection.findByPk(id)
-        connection.destroy()
+        const {id} = req.params
+        const connection = await Connection.delete(id)
         return connection
     }
 )

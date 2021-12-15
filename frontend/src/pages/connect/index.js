@@ -16,7 +16,7 @@ const Connect = () => {
 
     const handleBreak = e => {
         e.preventDefault()
-        dispatch(connectAction.disconnect(connectStatus.id))
+        dispatch(connectAction.disconnect(connectStatus?.id))
     }
 
     const handleConnect = e => {
