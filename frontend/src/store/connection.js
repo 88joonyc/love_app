@@ -6,7 +6,7 @@ const initialState = {
     connection: null
 }
 
-export const connectionReducer = (state = initialState, action ) => {
+export const connectionReducer = (state = initialState, action) => {
     let newState
     switch (action.type) {
         case LOAD_CONNECTION:

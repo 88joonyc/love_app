@@ -14,13 +14,13 @@ const Connect = () => {
 
     let num = Math.floor(Math.random() * 100000000)
 
-    const handleBreak = () => {
-
+    const handleBreak = e => {
+        e.preventDefault()
+        dispatch(connectAction.disconnect(connectStatus.id))
     }
 
     const handleConnect = e => {
         e.preventDefault()
-
         dispatch(connectAction.connect({
             loveyId: currentUser.id,
             validator: num
@@ -37,7 +37,7 @@ const Connect = () => {
                     <input hidden type='number' value={currentUser?.id}/>
                     <input hidden type='number' value={num}/>
                     {!connectStatus && <button onClick={e => handleConnect(e)} className="connect-button">make a new connection</button>}
-                    <button onClick={handleBreak} className="delete-button">break connection</button>
+                    <button onClick={e => handleBreak(e)} className="delete-button">break connection</button>
                 </form>
             </div>
         </div>

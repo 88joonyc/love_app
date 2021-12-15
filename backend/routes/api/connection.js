@@ -65,4 +65,12 @@ router.put('/:id',
     }
 )
 
+router.delete('/',
+    async(req, res) => {
+        const {id} = req.body
+        const connection = await Connection.findByPk(id)
+        connection.destroy()
+    }
+)
+
 module.exports = router
