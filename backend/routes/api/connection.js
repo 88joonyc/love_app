@@ -69,17 +69,9 @@ router.put('/:id',
 router.delete('/:id',
     asyncHandler( async(req, res) => {
         const {id} = req.params
-
         const connection = await Connection.findByPk(id)
-        if (!connection) {
-          const err = new Error('No connection');
-          err.status = 401;
-          err.title = 'No Connection';
-          err.errors = [ 'There is no connection' ]
-          return next(err)
-        }
         await connection.destroy()
-        return true
+        return res.json(connection)
     })
 )
 

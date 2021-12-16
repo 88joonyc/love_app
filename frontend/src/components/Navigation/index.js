@@ -32,9 +32,9 @@ const Navigation = ({isLoaded, connected, setConnected, setLoaded}) => {
                 <div className="navigation-unordered">
                     <div className="navigation-links">
                         <NavLink className='navlink' to='/'>Home</NavLink>
-                        {isLoaded && naviLinks}
                         {<NavLink className='navlink' to='/connect'>Connect</NavLink>}
                         <NavLink className='navlink' to='/about'>About</NavLink>
+                        {isLoaded && naviLinks}
                     </div>
                 </div>
             </div>

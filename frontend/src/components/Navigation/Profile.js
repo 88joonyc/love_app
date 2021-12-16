@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import * as sessionActions from '../../actions/session'
 import { disconnect } from "../../actions/connection";
 
+import './profile.css'
+
 const Profile = ({ user, setConnected }) => {
     const dispatch = useDispatch()
     const [ showMenu, setShowMenu ] = useState(false)
@@ -34,17 +36,17 @@ const Profile = ({ user, setConnected }) => {
 
     return (
         <>
-            <button onClick={open}>
+            <button className='profile-button' onClick={open}>
                 <i className='profile-button' />
             </button>
             {showMenu && (
-                <ul className='profile-dropdown'>
-                    <li>{user.user}</li>
-                    <li>{user.email}</li>
-                    <li>
-                        <button onClick={logout}>Log Out</button>
-                    </li>
-                </ul>
+                <div className='profile-dropdown'>
+                    <div className="dropdown-links">{user.id}</div>
+                    <div className="dropdown-links">{user.email}</div>
+                    <div>
+                        <button className="logout-button" onClick={logout}>Log Out</button>
+                    </div>
+                </div>
             )}
         </>
     )
