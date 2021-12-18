@@ -63,6 +63,7 @@ export const connect = connection => async dispatch => {
 
 export const connectDovey = payload => async dispatch => {
     const {doveyId, validator} = payload
+    debugger
     const res = await csrfFetch('/api/connection', {
         method: "PUT",
         body: JSON.stringify({

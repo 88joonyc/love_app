@@ -1,11 +1,12 @@
 .profile-dropdown {
     position: absolute;
-    top: 60px;
+    top: 45px;
     right: 10px;
     margin: 0 auto;
     background-color: white;
     box-shadow: 3px 3px 10px rgb(206, 201, 201);
-    width: 18%
+    width: 18%;
+    z-index: 200;
 }
 
 .dropdown-links {
