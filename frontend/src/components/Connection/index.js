@@ -8,17 +8,14 @@ import './Connection.css'
 const ConnectForm = ({ currentUser }) => {
 
     const [ validator, setValidator ] = useState('')
-    const dispatch = useDispatch(connectDovey({
-        validator,
-        doveyId: currentUser.id
-
-    }))
-
-    console.log(validator)
+    const dispatch = useDispatch()
 
     const handleSubmit = e => {
         e.preventDefault()
-        dispatch()
+        dispatch(connectDovey({
+            validator,
+            doveyId: currentUser.id
+    }))
     }
 
     return (

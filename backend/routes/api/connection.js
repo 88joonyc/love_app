@@ -57,12 +57,10 @@ router.post('/make',
 router.put('/',
     asyncHandler( async (req, res) => {
         const {doveyId, validator} = req.body
-        const connected = await Connection.findAll({
-            where: {
+        const connect = await Connection.update({ doveyId },
+            {where: {
                 validator: validator
-            }
-        })
-        const connect = await connected.update({ doveyId })
+            }})
         return res.json(connect)
     })
 )
