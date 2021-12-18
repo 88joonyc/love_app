@@ -31,8 +31,8 @@ const Navigation = ({isLoaded, connected, setConnected, setLoaded}) => {
             <div className="navi-buttons">
                 <div className="navigation-unordered">
                     <div className="navigation-links">
-                        <NavLink className='navlink' to='/'>Home</NavLink>
-                        {<NavLink className='navlink' to='/connect'>Connect</NavLink>}
+                        <NavLink className='navlink navi-home' to='/'></NavLink>
+                        {<NavLink className='navlink navi-conn' to='/connect'>Connect</NavLink>}
                         <NavLink className='navlink' to='/about'>About</NavLink>
                         {isLoaded && naviLinks}
                     </div>

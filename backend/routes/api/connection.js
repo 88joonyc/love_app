@@ -22,6 +22,7 @@ router.get('/',
         )
     })
 )
+
 // login connected
 router.post('/connect',
     asyncHandler( async (req, res, next) => {
@@ -38,8 +39,6 @@ router.post('/connect',
         return res.json(
             logged
         )
-
-
     }))
 
 

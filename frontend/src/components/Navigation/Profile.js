@@ -36,9 +36,7 @@ const Profile = ({ user, setConnected }) => {
 
     return (
         <>
-            <button className='profile-button' onClick={open}>
-                <i className='profile-button' />
-            </button>
+            {!showMenu ? <div className='profile-button navi-menu' onClick={open}></div> : <div className='profile-button navi-menu2' onClick={open}></div>}
             {showMenu && (
                 <div className='profile-dropdown'>
                     <div className="dropdown-links">{user.id}</div>
