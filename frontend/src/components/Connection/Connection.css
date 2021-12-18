@@ -1,0 +1,17 @@
+.connecter-container {}
+
+.connecter-form {
+    display: flex;
+    justify-content: center;
+}
+
+.connect-input {
+    height: 40px;
+    width: 300px;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.connect-submit {
+
+}
