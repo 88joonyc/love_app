@@ -3,6 +3,7 @@
 .connecter-form {
     display: flex;
     justify-content: center;
+    padding-top: 100px;
 }
 
 .connect-input {
@@ -13,5 +14,6 @@
 }
 
 .connect-submit {
-
+    background-color: blue;
+    color: white
 }

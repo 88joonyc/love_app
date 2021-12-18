@@ -43,7 +43,7 @@ const Connect = () => {
                     {!connectStatus && <button onClick={e => handleConnect(e)} className="connect-button">make a new connection</button>}
                     <button onClick={e => handleBreak(e)} className="delete-button">break connection</button>
                 </form>}
-                {conn && <ConnectForm />}
+                {conn && <ConnectForm currentUser={currentUser} />}
                 <button className="add-dovey" onClick={() => toggleConn(!conn)}>Add connection</button>
             </div>
         </div>

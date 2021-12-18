@@ -2,7 +2,7 @@ import React from "react";
 
 import './Connection.css'
 
-const ConnectForm = () => {
+const ConnectForm = ({ currentUser }) => {
 
 
 
