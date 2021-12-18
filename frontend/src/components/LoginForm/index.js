@@ -6,7 +6,7 @@ import * as sessionActions from '../../actions/session';
 
 import './LoginForm.css'
 
-export default function LoginForm() {
+export default function LoginForm({setLoaded}) {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
 
@@ -16,6 +16,15 @@ export default function LoginForm() {
 
     const demoLogin = () => {
         dispatch(sessionActions.login({ 'credential': 'lovey@dove.com', 'password': 'password' }))
+        .then(() => setLoaded(true))
+    }
+    const demoLogin2 = () => {
+        dispatch(sessionActions.login({ 'credential': 'lover1@email.com', 'password': 'password' }))
+        .then(() => setLoaded(true))
+    }
+    const demoLogin3 = () => {
+        dispatch(sessionActions.login({ 'credential': 'lover2@email.com', 'password': 'password' }))
+        .then(() => setLoaded(true))
     }
 
 
@@ -26,7 +35,7 @@ export default function LoginForm() {
     const handleSubmit = e =>  {
         e.preventDefault();
         setErrors([]);
-        return dispatch(sessionActions.login({ credential, password }))
+        return dispatch(sessionActions.login({ credential, password })).then(() => setLoaded(true))
             .catch(async res => {
                 const data = await res.json();
                 if (data && data.errors) setErrors(data.errors);
@@ -52,7 +61,7 @@ export default function LoginForm() {
                     <ul>
                         {errors.map((error, idx) =>
                             <div className='login-error' key={idx}>{error}</div>
-                            )}
+                        )}
                     </ul>
                     <input
                         type='password'
@@ -66,11 +75,23 @@ export default function LoginForm() {
                         type='submit'
                         className='login-button'
                     >Log In</button>
-                    <button
-                        type='button'
-                        className='login-button demo-login'
-                        onClick={demoLogin}
-                    >Demo User</button>
+                    <div className='demo-group'>
+                        <button
+                            type='button'
+                            className='login-button demo-login'
+                            onClick={demoLogin}
+                            >Demo User</button>
+                        <button
+                            type='button'
+                            className='login-button demo-login'
+                            onClick={demoLogin2}
+                            >Demo 2</button>
+                        <button
+                            type='button'
+                            className='login-button demo-login'
+                            onClick={demoLogin3}
+                            >Demo 2</button>
+                    </div>
                 </form>
                 <div className='or-break'> ━━━━━━━━━━━ or ━━━━━━━━━━━ </div>
                 <div className='signup-link-container'>

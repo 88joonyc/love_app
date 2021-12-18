@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 import ConnectorForm from "../../components/Connector";
 
@@ -7,11 +8,12 @@ import ConnectorForm from "../../components/Connector";
 
 const Connect = () => {
 
+    const connected = useSelector(state => state.connection.connection)
 
 
     return (
         <>
-            <ConnectorForm />
+            {!connected?.doveyId && <ConnectorForm />}
         </>
     )
 }

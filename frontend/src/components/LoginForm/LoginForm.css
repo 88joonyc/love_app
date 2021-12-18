@@ -78,6 +78,11 @@
 .demo-login {
     background-color: rgb(249, 128, 152);
     color: white;
+    width: 100%;
+}
+
+.demo-group {
+    display: flex;
 }
 
 .demo-login:hover {

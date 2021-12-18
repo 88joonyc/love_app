@@ -29,14 +29,13 @@ function App() {
 
   return (
     <>
-      {user && <Navigation isLoaded={isLoaded} connected={connected} setConnected={setConnected}/>}
-      {isLoaded && (
+      {user && <Navigation isLoaded={isLoaded} setLoaded={setLoaded} connected={connected} setConnected={setConnected}/>}
         <Routes>
-          <Route path='/login' element={<LoginForm />} />
+          {isLoaded && <Route path='/connect' element={<Connect />} />}
+          <Route path='/login' element={<LoginForm setLoaded={setLoaded} />} />
           <Route path='/signup' element={<SignupForm />} />
-          <Route path='/connect' element={<Connect />} />
         </Routes>
-      )}
+      )
       <Footer />
     </>
   );

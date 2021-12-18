@@ -32,7 +32,7 @@ const Profile = ({ user, setConnected, setLoaded }) => {
         dispatch(sessionActions.logout())
         dispatch(disconnect())
         setConnected(true)
-        // setLoaded(false)
+        setLoaded(false)
     }
 
     return (
