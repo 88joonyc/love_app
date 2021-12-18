@@ -24,16 +24,16 @@ body {
 }
 
 .navi-home {
-    content: url(./home.png);
+    content: url(../../images/home.png);
 }
 
 .navi-conn {
-    content: url(./conn.png);
+    content: url(../../images/conn.png);
 }
 
 .navi-menu {
-    content: url(./profdown.png);
+    content: url(../../images/profdown.png);
 }
 .navi-menu2 {
-    content: url(./profup.png);
+    content: url(../../images/profup.png);
 }

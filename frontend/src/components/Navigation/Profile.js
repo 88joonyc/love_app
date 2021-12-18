@@ -6,7 +6,7 @@ import { disconnect } from "../../actions/connection";
 
 import './profile.css'
 
-const Profile = ({ user, setConnected }) => {
+const Profile = ({ user, setConnected, setLoaded }) => {
     const dispatch = useDispatch()
     const [ showMenu, setShowMenu ] = useState(false)
 
@@ -32,6 +32,7 @@ const Profile = ({ user, setConnected }) => {
         dispatch(sessionActions.logout())
         dispatch(disconnect())
         setConnected(true)
+        // setLoaded(false)
     }
 
     return (
