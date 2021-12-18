@@ -1,5 +1,5 @@
 import { csrfFetch } from "../store/csrf";
-import { MAKE_CONNECTION, REMOVE_CONNECTION, LOAD_CONNECTION } from "../store/connection";
+import { MAKE_CONNECTION, REMOVE_CONNECTION, LOAD_CONNECTION, UPDATE_CONNECTION } from "../store/connection";
 
 const load = (connection) => {
     return {
@@ -20,6 +20,13 @@ const removeConnection = () => {
         type: REMOVE_CONNECTION
     };
 };
+
+const updateConnection = connection => {
+    return {
+        type: UPDATE_CONNECTION,
+        payload: connection
+    }
+}
 
 export const loadConnection = () => async dispatch => {
     const connection = await csrfFetch('/api/connection')
@@ -53,6 +60,20 @@ export const connect = connection => async dispatch => {
     dispatch(makeConnection(data.connection));
     return res;
 };
+
+export const connectDovey = payload => async dispatch => {
+    const {doveyId, validator} = payload
+    const res = await csrfFetch('/api/connection', {
+        method: "PUT",
+        body: JSON.stringify({
+            doveyId,
+            validator
+        })
+    })
+    const data = await res.json()
+    dispatch(updateConnection(data.connection))
+    return res
+}
 
 // export const disconnect = (id) => async dispatch => {
 //     const res = csrfFetch(`/api/connection/${id}`, {

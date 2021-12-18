@@ -1,6 +1,7 @@
 export const MAKE_CONNECTION = 'connection/makeConnection';
 export const REMOVE_CONNECTION = 'connection/removeConnection';
 export const LOAD_CONNECTION = 'connection/loadConnection';
+export const UPDATE_CONNECTION = 'connection/updateConnection';
 
 const initialState = {
     connection: null
