@@ -54,15 +54,17 @@ router.post('/make',
     })
 )
 
-router.put('/:id',
-    async (req, res) => {
-        const connection = await Connection.update(req.body, {
+router.put('/',
+    asyncHandler( async (req, res) => {
+        const {doveyId, validator} = req.body
+        const connected = await Connection.findAll({
             where: {
-                id: req.params.id
+                validator: validator
             }
         })
-        return res.json(connection)
-    }
+        const connect = await connected.update({ doveyId })
+        return res.json(connect)
+    })
 )
 
 router.delete('/:id',

@@ -22,6 +22,10 @@ export const connectionReducer = (state = initialState, action) => {
             newState = Object.assign({}, state)
             newState.connection = null
             return newState
+        case UPDATE_CONNECTION:
+            newState = Object.assign({}, state)
+            newState.connection = action.payload
+            return newState
         default:
             return state;
     }
