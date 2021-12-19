@@ -57,6 +57,7 @@ router.post('/make',
 router.put('/',
     asyncHandler( async (req, res) => {
         const {doveyId, validator} = req.body
+        debugger
         const connect = await Connection.update({ doveyId },
             {where: {
                 validator: validator

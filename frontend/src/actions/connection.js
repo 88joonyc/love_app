@@ -71,6 +71,7 @@ export const connectDovey = payload => async dispatch => {
             validator
         })
     })
+    debugger
     const data = await res.json()
     dispatch(updateConnection(data.connection))
     return res

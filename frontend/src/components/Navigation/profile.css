@@ -1,4 +1,4 @@
-.profile-dropdown {
+    .profile-dropdown {
     position: absolute;
     top: 45px;
     right: 10px;
@@ -22,4 +22,15 @@
 
 .profile-button {
     cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .profile-dropdown {
+        position: absolute;
+        right: 0;
+        top: 40px;
+        box-shadow: 0 0 0 black;
+        height: 100%;
+        width: 50%;
+    }
 }
