@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
 import ConnectorForm from "../../components/Connector";
-
-
+import ConnectedNavi from "../../components/ConnectedNavi";
 
 
 const Connect = () => {
@@ -14,6 +13,7 @@ const Connect = () => {
     return (
         <>
             {!connected?.doveyId && <ConnectorForm />}
+            {connected?.doveyId && <ConnectedNavi />}
         </>
     )
 }
