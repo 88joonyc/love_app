@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { connectDovey } from "../../actions/connection";
+import { connectDovey, couple } from "../../actions/connection";
 
 import './Connection.css'
 
@@ -15,7 +15,8 @@ const ConnectForm = ({ currentUser }) => {
         dispatch(connectDovey({
             validator,
             doveyId: currentUser.id
-    }))
+        }))
+        dispatch(couple({id: currentUser?.id}))
     }
 
     return (

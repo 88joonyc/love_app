@@ -25,10 +25,7 @@ export const connectionReducer = (state = initialState, action) => {
         case UPDATE_CONNECTION:
             return {
                 ...state,
-                'connection': {
-                    ...state[action.connection],
-                    ...action.connection
-                }
+                'connection': action.connection
             }
         default:
             return state;
