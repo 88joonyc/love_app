@@ -9,7 +9,6 @@ const initialState = {
 
 export const connectionReducer = (state = initialState, action) => {
     let newState
-    debugger
     switch (action.type) {
         case LOAD_CONNECTION:
             if (action.connection) {
@@ -24,7 +23,13 @@ export const connectionReducer = (state = initialState, action) => {
             newState.connection = null
             return newState
         case UPDATE_CONNECTION:
-            return Object.assign({}, action.payload)
+            return {
+                ...state,
+                'connection': {
+                    ...state[action.connection],
+                    ...action.connection
+                }
+            }
         default:
             return state;
     }

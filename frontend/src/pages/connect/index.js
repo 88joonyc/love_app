@@ -13,7 +13,7 @@ const Connect = () => {
 
     return (
         <>
-            {!connected?.doveyId && <ConnectorForm />}
+            {/*connected?.doveyId &&*/ <ConnectorForm />}
         </>
     )
 }

@@ -24,7 +24,7 @@ const removeConnection = () => {
 const updateConnection = connection => {
     return {
         type: UPDATE_CONNECTION,
-        payload: connection
+        connection
     }
 }
 
@@ -62,19 +62,15 @@ export const connect = connection => async dispatch => {
 };
 
 export const connectDovey = payload => async dispatch => {
-    const {doveyId, validator} = payload
-    debugger
     const res = await csrfFetch('/api/connection', {
         method: "PUT",
-        body: JSON.stringify({
-            doveyId,
-            validator
-        })
+        body: JSON.stringify(
+            payload
+        )
     })
-    debugger
     const data = await res.json()
-    dispatch(updateConnection(data.connection))
-    return res
+    dispatch(updateConnection(data))
+    return data
 }
 
 // export const disconnect = (id) => async dispatch => {
