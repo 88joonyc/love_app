@@ -63,6 +63,9 @@ module.exports = (sequelize, DataTypes) => {
             doveyId: id
           }
         ],
+        include: {
+          user
+        }
       }
     })
     if (connection) {
@@ -78,16 +81,6 @@ module.exports = (sequelize, DataTypes) => {
     })
     return await Connection.scope('loggedConnection').findByPk(connection.id)
   }
-
-  // Connection.delete = async function({ connectionId }) {
-  //   const connection = await Connection.findByPk(connectionId)
-  //   if (!connection) throw new Error('This connection does not exists!')
-
-  //   return await Connection.destroy({
-  //     where: {id: connectionId}
-  //   })
-
-  // }
 
   return Connection;
 };
