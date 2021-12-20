@@ -7,7 +7,6 @@ module.exports = (sequelize, DataTypes) => {
     connectionId: {
       type: DataTypes.INTEGER,
       allowNull:false,
-      unique: true,
       references: {
         model: {
           tableName: 'Connections'

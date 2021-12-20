@@ -11,7 +11,6 @@ module.exports = {
       connectionId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        unique:true
       },
       senderId: {
         allowNull: false,
