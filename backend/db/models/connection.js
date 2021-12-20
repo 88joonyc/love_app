@@ -54,6 +54,7 @@ module.exports = (sequelize, DataTypes) => {
   Connection.getCurrentConnectionById = async function ({id}) {
     const { Op } = require('sequelize');
     const connection = await Connection.scope('connect').findOne({
+      // include: ['lovey', 'dovey'],
       where: {
         [Op.or]: [
           {
@@ -63,9 +64,6 @@ module.exports = (sequelize, DataTypes) => {
             doveyId: id
           }
         ],
-        include: {
-          user
-        }
       }
     })
     if (connection) {

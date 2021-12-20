@@ -1,7 +1,5 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   const Message = sequelize.define('Message', {
     connectionId: {
@@ -10,13 +8,17 @@ module.exports = (sequelize, DataTypes) => {
       references: {
         model: {
           tableName: 'Connections'
-        }
-      }
+        },
+      },
     },
     senderId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-
+      references: {
+        model: {
+          tableName: 'Users'
+        },
+      },
     },
     content: {
       type: DataTypes.STRING,

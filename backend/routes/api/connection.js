@@ -1,10 +1,12 @@
 const { check } = require("express-validator");
+const express = require('express');
 const asyncHandler = require('express-async-handler');
 
 const { Connection, User } = require('../../db/models')
+const router = express.Router();
 
-const router = require("./users");
-const connection = require("../../db/models/connection");
+// const router = require("./users");
+// const connection = require("../../db/models/connection");
 
 const validateConnection = (
     check('loveyId')
