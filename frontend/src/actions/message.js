@@ -1,20 +1,36 @@
 import { csrfFetch } from "../store/csrf";
-import { LOAD_MESSAGES, CREATE_MESSAGE, REMOVE_MESSAGE } from '../store/message'
+import { LOAD_MESSAGES, CREATE_MESSAGE, REMOVE_MESSAGE } from '../store/message';
 
 const load = (message) => {
     return {
         type: LOAD_MESSAGES,
         payload: message
     }
-}
+};
 
 const postMessage = (message) => {
     return {
         type: CREATE_MESSAGE,
         payload: message
     }
-}
+};
 
-export const loadMessages = () => {
+export const loadMessages = ()=> async dispatch => {
     const message = await csrfFetch('/api/messages')
+    const res = await message.json();
+    dispatch(load(res));
+};
+
+export const postMessage = payload => async dispatch => {
+    const res = await csrfFetch('/api/messages', {
+        method: 'POST',
+        body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    dispatch(postMessage(data));
+    return res
+};
+
+const removeMessage = id => async dispatch => {
+    // const res = csrfFetch
 }

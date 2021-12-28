@@ -2,14 +2,14 @@ export const LOAD_MESSAGES = 'messages/LOAD_MESSAGES';
 export const CREATE_MESSAGE = 'messages/CREATE_MESSAGE';
 export const REMOVE_MESSAGE = 'messages/DELETE_MESSAGE'
 
-initialState= {
+const initialState = {
     message: null
 }
 
-export const messageReudcer = (state= initialState, action) => {
+export const messageReducer = (state = initialState, action) => {
     let newState;
     switch(action.type) {
-        case LOAD_CONNECTION:
+        case LOAD_MESSAGES:
             if (action.message) {
                 return {'message': action.message}
             }

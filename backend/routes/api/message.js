@@ -19,4 +19,11 @@ router.get('/',
     })
 )
 
+router.post('/',
+    asyncHandler(async (req, res) => {
+        const { connectionId, senderId, content } = req.body
+        const message = await Message.create({connectionId, senderId, content})
+        return res.json(message)
+    }))
+
 module.exports = router
