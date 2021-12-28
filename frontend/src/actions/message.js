@@ -8,7 +8,7 @@ const load = (message) => {
     }
 };
 
-const postMessage = (message) => {
+const post = (message) => {
     return {
         type: CREATE_MESSAGE,
         payload: message

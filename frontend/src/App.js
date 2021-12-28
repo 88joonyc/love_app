@@ -11,6 +11,7 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 
 import Connect from "./pages/connect";
+import Message from "./pages/message";
 
 function App() {
   const dispatch = useDispatch()
@@ -31,6 +32,7 @@ function App() {
     <>
       {user && <Navigation isLoaded={isLoaded} setLoaded={setLoaded} connected={connected} setConnected={setConnected}/>}
         <Routes>
+          {isLoaded && <Route path='/messages' element={<Message />} />}
           {isLoaded && <Route path='/connect' element={<Connect />} />}
           <Route path='/login' element={<LoginForm setLoaded={setLoaded} />} />
           <Route path='/signup' element={<SignupForm />} />
