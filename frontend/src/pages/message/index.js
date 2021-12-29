@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { loadMessages } from '../../actions/message';
-import { useDispatch } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 
 import ConnectedNavi from '../../components/ConnectedNavi';
 
@@ -12,6 +12,12 @@ const Message = () => {
 
     const [ message, setMessage ] = useState('')
 
+    const user = useSelector(state => state.session.user)
+    const messages = useSelector(state => state.messages.message)
+    const connected = useSelector(state => state.connection.connection)
+
+    console.log(messages)
+
     useEffect(() => {
         dispatch(loadMessages())
     }, [])
@@ -21,7 +27,11 @@ const Message = () => {
         <>
             <ConnectedNavi />
             <div className='message-container'>
-                <div>hello</div>
+                <div className='messages-container'>{
+                messages?.map(mess => (
+                    mess.connectionId === connected.id ? <div className='each-message'>{mess.content}</div> : null
+                ))
+                }</div>
                 <div className='message-input-container'>
                     <form className='message-form'>
                         <input
