@@ -29,7 +29,9 @@ const Message = () => {
             <div className='message-container'>
                 <div className='messages-container'>{
                 messages?.map(mess => (
-                    mess.connectionId === connected.id ? <div className='each-message'>{mess.content}</div> : null
+                    mess.connectionId === connected.id ?
+                        mess.senderId === user.id ? <div className='user-message'>{mess.content}</div> : <div className='sender-message'>{mess.content}</div>
+                    : null
                 ))
                 }</div>
                 <div className='message-input-container'>
