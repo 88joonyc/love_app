@@ -16,7 +16,7 @@ const post = (message) => {
 };
 
 export const loadMessages = ()=> async dispatch => {
-    const message = await csrfFetch('/api/messages')
+    const message = await csrfFetch('/api/message')
     const res = await message.json();
     dispatch(load(res));
 };
