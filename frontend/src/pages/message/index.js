@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { loadMessages } from '../../actions/message';
+import { loadMessages, postMessage } from '../../actions/message';
 import { connect, useDispatch, useSelector } from 'react-redux';
 
 import ConnectedNavi from '../../components/ConnectedNavi';
@@ -16,12 +16,13 @@ const Message = () => {
     const messages = useSelector(state => state.messages.message)
     const connected = useSelector(state => state.connection.connection)
 
-    console.log(messages)
+    const sendMessage = () => {
+        dispatch(postMessage({ connectionId: connected.id, senderId: user.id, content: message }))
+    }
 
     useEffect(() => {
         dispatch(loadMessages())
     }, [])
-
 
     return (
         <>
@@ -35,7 +36,7 @@ const Message = () => {
                 ))
                 }</div>
                 <div className='message-input-container'>
-                    <form className='message-form'>
+                    <form onSubmit={sendMessage} className='message-form'>
                         <input
                             className='message-input'
                             onChange={e => setMessage(e.target.value)}

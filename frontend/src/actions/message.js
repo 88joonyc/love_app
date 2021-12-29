@@ -27,7 +27,7 @@ export const postMessage = payload => async dispatch => {
         body: JSON.stringify(payload)
     });
     const data = await res.json();
-    dispatch(postMessage(data));
+    dispatch(post(data));
     return res
 };
 
