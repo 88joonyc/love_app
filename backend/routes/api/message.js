@@ -1,9 +1,10 @@
+const express = require('express');
 const { check } = require("express-validator");
 const asyncHandler = require('express-async-handler');
 
 const { Message } = require('../../db/models')
 
-const router = require("./users");
+const router = express.Router()
 
 // const validateConnection = (
 //     check('')
@@ -21,9 +22,7 @@ router.get('/',
 
 router.post('/',
     asyncHandler(async (req, res) => {
-        console.log('this content===========================')
         const { connectionId, senderId, content } = req.body
-        console.log('this content===========================',content)
         const message = await Message.create({connectionId, senderId, content})
         return res.json(message)
     }))

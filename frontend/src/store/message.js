@@ -10,12 +10,12 @@ export const messageReducer = (state = initialState, action) => {
     let newState;
     switch(action.type) {
         case LOAD_MESSAGES:
-            if (action.message) {
-                return {'message': action.message}
-            }
-        case CREATE_MESSAGE:
             newState = Object.assign({}, state)
             newState.message = action.payload
+            return newState
+        case CREATE_MESSAGE:
+            newState = Object.assign({}, state)
+            newState.message = [...state, action.payload]
             return newState
         case REMOVE_MESSAGE:
             return
