@@ -21,7 +21,9 @@ router.get('/',
 
 router.post('/',
     asyncHandler(async (req, res) => {
+        console.log('this content===========================')
         const { connectionId, senderId, content } = req.body
+        console.log('this content===========================',content)
         const message = await Message.create({connectionId, senderId, content})
         return res.json(message)
     }))

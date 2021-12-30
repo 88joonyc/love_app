@@ -22,7 +22,7 @@ export const loadMessages = ()=> async dispatch => {
 };
 
 export const postMessage = payload => async dispatch => {
-    const res = await csrfFetch('/api/messages', {
+    const res = await csrfFetch('/api/message', {
         method: 'POST',
         body: JSON.stringify(payload)
     });

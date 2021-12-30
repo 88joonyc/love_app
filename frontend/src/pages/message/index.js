@@ -16,7 +16,8 @@ const Message = () => {
     const messages = useSelector(state => state.messages.message)
     const connected = useSelector(state => state.connection.connection)
 
-    const sendMessage = () => {
+    const sendMessage = (e) => {
+        e.preventDefault()
         dispatch(postMessage({ connectionId: connected.id, senderId: user.id, content: message }))
     }
 
@@ -30,13 +31,13 @@ const Message = () => {
             <div className='message-container'>
                 <div className='messages-container'>{
                 messages?.map(mess => (
-                    mess.connectionId === connected.id ?
-                        mess.senderId === user.id ? <div className='user-message'>{mess.content}</div> : <div className='sender-message'>{mess.content}</div>
+                    mess?.connectionId === connected?.id ?
+                        mess?.senderId === user?.id ? <div className='user-message'>{mess.content}</div> : <div className='sender-message'>{mess.content}</div>
                     : null
                 ))
                 }</div>
                 <div className='message-input-container'>
-                    <form onSubmit={sendMessage} className='message-form'>
+                    <form onSubmit={e => sendMessage(e)} className='message-form'>
                         <input
                             className='message-input'
                             onChange={e => setMessage(e.target.value)}
