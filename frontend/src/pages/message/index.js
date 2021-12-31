@@ -18,12 +18,12 @@ const Message = () => {
 
     const sendMessage = (e) => {
         e.preventDefault()
-        // dispatch(postMessage({ connectionId: connected.id, senderId: user.id, content: message }))
+        dispatch(postMessage({ connectionId: connected.id, senderId: user.id, content: message }))
     }
 
     useEffect(() => {
         dispatch(loadMessages())
-    }, [])
+    }, [dispatch, ])
 
     return (
         <>

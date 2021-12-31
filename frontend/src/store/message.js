@@ -14,8 +14,8 @@ export const messageReducer = (state = initialState, action) => {
             newState.message = action.payload
             return newState
         case CREATE_MESSAGE:
-            newState = Object.assign({}, state)
-            newState.message = [...state, action.payload]
+            newState = {message: state.message}
+            newState.message.push(action.payload)
             return newState
         case REMOVE_MESSAGE:
             return
