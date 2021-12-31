@@ -34,7 +34,8 @@ const Message = () => {
         // lemn.scrollIntoView({block:'start', behavior: 'smooth'})
     }
 
-    document.addEventListener('click', e => {
+    document.addEventListener('DOMContentLoaded', {
+
     })
 
 
