@@ -19,11 +19,12 @@ const Message = () => {
     const sendMessage = (e) => {
         e.preventDefault()
         dispatch(postMessage({ connectionId: connected.id, senderId: user.id, content: message }))
+        setMessage('')
     }
 
     useEffect(() => {
         dispatch(loadMessages())
-    }, [dispatch, ])
+    }, [dispatch, message])
 
     return (
         <>
@@ -40,6 +41,7 @@ const Message = () => {
                     <form onSubmit={e => sendMessage(e)} className='message-form'>
                         <input
                             className='message-input'
+                            value={message}
                             onChange={e => setMessage(e.target.value)}
                         />
                         {message && <button className='submit-message'><img className='up-arrow'/></button>}

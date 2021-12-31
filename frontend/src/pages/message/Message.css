@@ -3,6 +3,11 @@
     width: 100%;
 }
 
+.messages-container {
+    height: 450px;
+    overflow-y: scroll;
+}
+
 .message-input-container {
     height: 50px;
     background-color: blue;
