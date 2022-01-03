@@ -22,10 +22,6 @@ const Message = () => {
         setMessage('')
     }
 
-    useEffect(() => {
-        dispatch(loadMessages())
-        scrollToBot()
-    }, [dispatch, message])
 
 
     function scrollToBot() {
@@ -34,9 +30,14 @@ const Message = () => {
         // lemn.scrollIntoView({block:'start', behavior: 'smooth'})
     }
 
-    document.addEventListener('DOMContentLoaded', {
+    useEffect(() => {
+        dispatch(loadMessages())
+        scrollToBot()
+    }, [dispatch, message])
 
-    })
+    // document.addEventListener('DOMContentLoaded', {
+
+    // })
 
 
     return (
