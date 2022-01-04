@@ -18,8 +18,8 @@ module.exports = (sequelize, DataTypes) => {
   })
 
   Album.associate = function(models) {
-    // Album.belongsTo(models.Connection, { foreignKey: 'connectionId' })
-    // Album.belongsTo(models.Image, { foreignKey: 'imageId' })
+    Album.belongsTo(models.Connection, { foreignKey: 'connectionId' })
+    Album.hasMany(models.Photo, { foreignKey: 'albumId' })
   };
 
   return Album;
