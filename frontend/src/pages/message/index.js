@@ -23,6 +23,11 @@ const Message = () => {
     }
 
 
+    useEffect(() => {
+        dispatch(loadMessages())
+        scrollToBot()
+    }, [dispatch, message])
+
 
     function scrollToBot() {
         var lemn = document.querySelector('.messages-container')
@@ -30,14 +35,8 @@ const Message = () => {
         // lemn.scrollIntoView({block:'start', behavior: 'smooth'})
     }
 
-    useEffect(() => {
-        dispatch(loadMessages())
-        scrollToBot()
-    }, [dispatch, message])
+    document.addEventListener('DOMContentLoaded', {})
 
-    // document.addEventListener('DOMContentLoaded', {
-
-    // })
 
 
     return (
