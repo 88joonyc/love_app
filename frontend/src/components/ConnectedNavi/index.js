@@ -11,9 +11,9 @@ const ConnectedNavi = () => {
             <div className="connected-navi">
                 <div className="conn-navi-butts">
                     <div className="navi-msg-container" >
-                        <NavLink className='navi-messages' to='/messages'>photos</NavLink>
+                        <NavLink className='navi-messages' to='/photos'>photos</NavLink>
                         <NavLink className='navi-messages' to='/messages'>messages</NavLink>
-                        <NavLink className='navi-messages' to='/messages'>adventures</NavLink>
+                        <NavLink className='navi-messages' to='/adventures'>adventures</NavLink>
                     </div>
                 </div>
             </div>
