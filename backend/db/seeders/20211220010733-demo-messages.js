@@ -99,6 +99,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Messages', {})
+    return queryInterface.bulkDelete('Messages', {})
   }
 };
