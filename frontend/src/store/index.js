@@ -3,12 +3,14 @@ import thunk from 'redux-thunk';
 import { sessionReducer } from './session';
 import { connectionReducer } from './connection';
 import { messageReducer } from './message';
+import { albumReducer } from './album';
 
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   connection: connectionReducer,
-  messages: messageReducer
+  messages: messageReducer,
+  albums: albumReducer,
 });
 
 
