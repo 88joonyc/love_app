@@ -1,4 +1,4 @@
-import { csrfFetch } from '../store/csrf/'
+import { csrfFetch } from '../store/csrf'
 import * as albumHander from '../store/album'
 
 const load = (album) => {
