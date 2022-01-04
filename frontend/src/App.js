@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 
 import Connect from "./pages/connect";
 import Message from "./pages/message";
+import PhotoGallery from "./pages/album";
 
 function App() {
   const dispatch = useDispatch()
@@ -34,6 +35,7 @@ function App() {
         <Routes>
           {isLoaded && <Route path='/messages' element={<Message />} />}
           {isLoaded && <Route path='/connect' element={<Connect />} />}
+          {isLoaded && <Route path='/photos' element={<PhotoGallery />} />}
           <Route path='/login' element={<LoginForm setLoaded={setLoaded} />} />
           <Route path='/signup' element={<SignupForm />} />
         </Routes>
