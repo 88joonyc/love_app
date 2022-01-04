@@ -2,17 +2,18 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 
-const { Connection, User, Album } = require('../../db/models')
+const { Album, Photo } = require('../../db/models')
 const router = express.Router();
 
 router.get('/:id',
     asyncHandler( async (req, res) => {
-        const res = Album.findAll({
+        const album = await Album.findAll({
             where: {
                 connectionId: req.params.id
-            }
+            },
+            include: [Photo]
         })
-        return res.json()
+        return res.json(album)
     })
 )
 
